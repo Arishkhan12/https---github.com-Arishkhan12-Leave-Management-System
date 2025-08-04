@@ -1,106 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Manager Dashboard</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/manager.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard - Leave Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/managerdashboard.css" rel="stylesheet" />
+       
 </head>
 <body>
-  <!-- Header -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
-    <div class="container-fluid justify-content-between">
-      <h5 class="fw-bold mb-0">Manager Dashboard</h5>
-      <div class="d-flex align-items-center gap-3">
-        <span class="fw-semibold text-primary" id="managerName">Hamza</span>
-        <button class="btn btn-light position-relative" onclick="showNotifications()">
-          <i class="bi bi-bell-fill fs-5 text-secondary"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
-        </button>
-        <button class="btn btn-outline-danger btn-sm" onclick="logout()">Logout</button>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Welcome -->
-  <section class="bg-light py-4 px-4">
-    <h4 class="fw-bold">Hello, Hamza 👋</h4>
-    <p class="text-muted">Here’s your team’s leave activity overview</p>
-  </section>
-
-  <!-- Stats Cards -->
-  <section class="py-3 px-4">
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card text-center shadow-sm border-start border-primary border-4">
-          <div class="card-body">
-            <h5 class="fw-semibold text-primary">Pending Requests</h5>
-            <p class="display-6 fw-bold" id="pendingCount">0</p>
-          </div>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Manager Dashboard</h1>
+            <div class="header-actions">
+                <div class="notification-icon">
+                    <i class="fas fa-bell" style="font-size: 18px;"></i>
+                    <div class="notification-badge">5</div>
+                </div>
+                <div class="user-info">
+                    <i class="fas fa-user-circle" style="font-size: 24px;"></i>
+                    <span id="username">Hamza Khan</span>
+                </div>
+                <a href="#" class="logout-btn" onclick="logout()">Logout</a>
+            </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card text-center shadow-sm border-start border-success border-4">
-          <div class="card-body">
-            <h5 class="fw-semibold text-success">Approved Requests</h5>
-            <p class="display-6 fw-bold" id="approvedCount">0</p>
-          </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                <h2>Hello, <span id="welcomeUser">Manager</span></h2>
+                <p>Manage your team's leave requests</p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card pending">
+                    <div class="stat-header">
+                        <div class="stat-title">Pending Requests</div>
+                        <div class="stat-icon pending">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </div>
+                    <div class="stat-number">5</div>
+                    <div class="stat-change">+2 from yesterday</div>
+                </div>
+
+                <div class="stat-card approved">
+                    <div class="stat-header">
+                        <div class="stat-title">Approved Requests</div>
+                        <div class="stat-icon approved">
+                            <i class="fas fa-check"></i>
+                        </div>
+                    </div>
+                    <div class="stat-number">12</div>
+                    <div class="stat-change">+4 this week</div>
+                </div>
+
+                <div class="stat-card team">
+                    <div class="stat-header">
+                        <div class="stat-title">Team Members</div>
+                        <div class="stat-icon team">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                    <div class="stat-number">15</div>
+                    <div class="stat-change">Active employees</div>
+                </div>
+            </div>
+
+            <!-- Pending Leave Requests -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <i class="fas fa-calendar-times" style="color: #ff6b6b;"></i>
+                        Pending Leave Requests
+                        <span class="section-badge">5</span>
+                    </div>
+                    <a href="#" class="view-all-btn">View All</a>
+                </div>
+
+                <div class="leave-request">
+                    <div class="employee-avatar">H</div>
+                    <div class="leave-info">
+                        <div class="employee-name">Hamza khalid </div>
+                        <div class="leave-type">Annual Leave</div>
+                        <div class="leave-dates">Dec 15 - Dec 20, 2024</div>
+                    </div>
+                    <div class="leave-actions">
+                        <button class="action-btn review-btn">Review</button>
+                        <button class="action-btn approve-btn" onclick="approveRequest(this)">Approve</button>
+                        <button class="action-btn reject-btn" onclick="rejectRequest(this)">Reject</button>
+                    </div>
+                    <div class="user-profile">
+                        <div class="profile-pics">
+                            <div class="profile-pic pic1"></div>
+                            <div class="profile-pic pic2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leave-request">
+                    <div class="employee-avatar">H</div>
+                    <div class="leave-info">
+                        <div class="employee-name">Hamza Rahman</div>
+                        <div class="leave-type">Sick Leave</div>
+                        <div class="leave-dates">Dec 12 - Dec 14, 2024</div>
+                    </div>
+                    <div class="leave-actions">
+                        <button class="action-btn review-btn">Review</button>
+                        <button class="action-btn approve-btn" onclick="approveRequest(this)">Approve</button>
+                        <button class="action-btn reject-btn" onclick="rejectRequest(this)">Reject</button>
+                    </div>
+                    <div class="user-profile">
+                        <div class="profile-pics">
+                            <div class="profile-pic pic1"></div>
+                            <div class="profile-pic pic2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leave-request">
+                    <div class="employee-avatar">H</div>
+                    <div class="leave-info">
+                        <div class="employee-name">Hamza Rahman</div>
+                        <div class="leave-type">Personal Leave</div>
+                        <div class="leave-dates">Dec 22 - Dec 23, 2024</div>
+                    </div>
+                    <div class="leave-actions">
+                        <button class="action-btn review-btn">Review</button>
+                        <button class="action-btn approve-btn" onclick="approveRequest(this)">Approve</button>
+                        <button class="action-btn reject-btn" onclick="rejectRequest(this)">Reject</button>
+                    </div>
+                    <div class="user-profile">
+                        <div class="profile-pics">
+                            <div class="profile-pic pic1"></div>
+                            <div class="profile-pic pic2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Approved Leave Requests -->
+            <div class="section approved-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <i class="fas fa-check-circle" style="color: #51cf66;"></i>
+                        Approved Leave Requests
+                        <span class="section-badge" style="background: #51cf66;">2</span>
+                    </div>
+                </div>
+
+                <div class="approved-item">
+                    <div class="approved-info">
+                        <div class="approved-avatar">A</div>
+                        <div class="approved-details">
+                            <h6>Ahmed Ali</h6>
+                            <small>Annual Leave</small>
+                        </div>
+                    </div>
+                    <div class="approved-date">Approved today</div>
+                </div>
+
+                <div class="approved-item">
+                    <div class="approved-info">
+                        <div class="approved-avatar">S</div>
+                        <div class="approved-details">
+                            <h6>Sara Khan</h6>
+                            <small>Sick Leave</small>
+                        </div>
+                    </div>
+                    <div class="approved-date">Approved yesterday</div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <i class="fas fa-bolt" style="color: #4facfe;"></i>
+                        Quick Actions
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <button class="quick-action-btn view-reports-btn" onclick="viewReports()">
+                        <i class="fas fa-chart-bar"></i> View All Reports
+                    </button>
+                    <button class="quick-action-btn manage-team-btn" onclick="manageTeam()">
+                        <i class="fas fa-users-cog"></i> Manage Team
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card text-center shadow-sm border-start border-info border-4">
-          <div class="card-body">
-            <h5 class="fw-semibold text-info">Team Members</h5>
-            <p class="display-6 fw-bold" id="teamCount">0</p>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- Pending Requests -->
-  <section class="px-4 py-3">
-    <h5 class="fw-bold mb-3 text-primary">Pending Leave Requests</h5>
-    <div class="table-responsive">
-      <table class="table table-bordered table-hover align-middle">
-        <thead class="table-light">
-          <tr>
-            <th>Employee</th>
-            <th>From</th>
-            <th>To</th>
-            <th>Reason</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id="pendingRequestsTable">
-          <!-- Dynamic rows -->
-        </tbody>
-      </table>
-    </div>
-  </section>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Check if user is logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            const sessionData = JSON.parse(localStorage.getItem('employeeSession') || '{}');
+            
+            if (!sessionData.userId) {
+                window.location.href = 'index.html';
+                return;
+            }
 
-  <!-- Approved Requests -->
-  <section class="px-4 py-3">
-    <h5 class="fw-bold mb-3 text-success">Approved Leave Requests</h5>
-    <div class="table-responsive">
-      <table class="table table-bordered table-hover align-middle">
-        <thead class="table-light">
-          <tr>
-            <th>Employee</th>
-            <th>From</th>
-            <th>To</th>
-            <th>Reason</th>
-          </tr>
-        </thead>
-        <tbody id="approvedRequestsTable">
-          <!-- Dynamic rows -->
-        </tbody>
-      </table>
-    </div>
-  </section>
+            // Update user info
+            document.getElementById('username').textContent = sessionData.userId;
+            document.getElementById('welcomeUser').textContent = sessionData.userId;
+        });
 
-  <script src="js/manager-dashboard.js"></script>
+        // Approve request function
+        function approveRequest(button) {
+            const request = button.closest('.leave-request');
+            const employeeName = request.querySelector('.employee-name').textContent;
+            
+            if (confirm(`Approve leave request for ${employeeName}?`)) {
+                request.style.background = '#e8f5e8';
+                request.style.border = '1px solid #51cf66';
+                button.textContent = 'Approved';
+                button.className = 'action-btn approve-btn';
+                button.disabled = true;
+                
+                // Hide other action buttons
+                const actions = request.querySelectorAll('.action-btn:not(.approve-btn)');
+                actions.forEach(btn => btn.style.display = 'none');
+                
+                // Update counter
+                updatePendingCounter(-1);
+                updateApprovedCounter(+1);
+                
+                showNotification('Leave request approved successfully!', 'success');
+            }
+        }
+
+        // Reject request function
+        function rejectRequest(button) {
+            const request = button.closest('.leave-request');
+            const employeeName = request.querySelector('.employee-name').textContent;
+            
+            if (confirm(`Reject leave request for ${employeeName}?`)) {
+                request.style.background = '#ffe8e8';
+                request.style.border = '1px solid #ff6b6b';
+                button.textContent = 'Rejected';
+                button.className = 'action-btn reject-btn';
+                button.disabled = true;
+                
+                // Hide other action buttons
+                const actions = request.querySelectorAll('.action-btn:not(.reject-btn)');
+                actions.forEach(btn => btn.style.display = 'none');
+                
+                // Update counter
+                updatePendingCounter(-1);
+                
+                showNotification('Leave request rejected.', 'error');
+            }
+        }
+
+        // Update counters
+        function updatePendingCounter(change) {
+            const counter = document.querySelector('.stat-card.pending .stat-number');
+            const badge = document.querySelector('.section-badge');
+            const currentCount = parseInt(counter.textContent);
+            const newCount = Math.max(0, currentCount + change);
+            counter.textContent = newCount;
+            badge.textContent = newCount;
+        }
+
+        function updateApprovedCounter(change) {
+            const counter = document.querySelector('.stat-card.approved .stat-number');
+            const currentCount = parseInt(counter.textContent);
+            counter.textContent = currentCount + change;
+        }
+
+        // Quick action functions
+        function viewReports() {
+            showNotification('Opening reports dashboard...', 'info');
+            // Implement navigation to reports page
+        }
+
+        function manageTeam() {
+            showNotification('Opening team management...', 'info');
+            // Implement navigation to team management page
+        }
+
+        // Logout function
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                localStorage.removeItem('employeeSession');
+                localStorage.removeItem('sessionExpiry');
+                window.location.href = 'index.html';
+            }
+        }
+
+        // Show notification
+        function showNotification(message, type) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `alert alert-${type === 'success' ? 'success' : type === 'error' ? 'danger' : 'info'} alert-dismissible fade show`;
+            notification.style.position = 'fixed';
+            notification.style.top = '20px';
+            notification.style.right = '20px';
+            notification.style.zIndex = '9999';
+            notification.style.minWidth = '300px';
+            notification.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Auto remove after 3 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 3000);
+        }
+
+        // Add click animations
+        document.querySelectorAll('.stat-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+    </script> -->
 </body>
 </html>
