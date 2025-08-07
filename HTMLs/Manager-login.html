@@ -9,197 +9,250 @@
   <link href="  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet"/>
     
       <style>
-           body {
+             body {
       background: linear-gradient(to right, #e6d4fc, #f4d6ff);
+      font-family: 'Segoe UI', sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding-top: 30px;
+      padding-top: 40px;
     }
-
-    .logo-icon {
-      font-size: 50px;
-      color: #0d6efd;
+ 
+    .portal-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+ 
+    .portal-header img {
+      width: 50px;
+      height: 50px;
       margin-bottom: 10px;
-      text-align: center;
     }
-
-    .login-title {
-      font-weight: 700;
-      font-size: 26px;
-      margin-bottom: 5px;
-      text-align: center;
+ 
+    .portal-header h1 {
+      font-weight: bold;
+      color: #10B581;
     }
-
-    .login-subtitle {
-      color: #666;
-      margin-bottom: 25px;
-      font-size: 14px;
-      text-align: center;
+ 
+    .portal-header p {
+      color: #7E7D7D;
+      margin-top: -5px;
     }
-
+ 
     .login-container {
-      background: white;
-      padding: 30px 40px;
-      width: 100%;
-      max-width: 400px;
+      background-color: white;
       border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 40px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 450px;
     }
-
-    .form-group {
-      margin-bottom: 15px;
+ 
+    .form-control:focus {
+      box-shadow: none;
+      border-color: #10B581;
     }
-
-    .input-group {
-      position: relative;
+ 
+    .form-check-input:checked {
+      background-color: #10B581;
+      border-color: #10B581;
     }
-
-    .input-group i {
-      position: absolute;
-      top: 50%;
-      left: 12px;
-      transform: translateY(-50%);
-      color: #888;
-    }
-
-    .input-group input {
-      padding-left: 35px !important;
-    }
-
-    .form-options {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-      font-size: 14px;
-    }
-
-    .login-btn {
+ 
+    .btn-primary {
+       background: linear-gradient(90.61deg, #10B581 1.77%, #0D9687 97.92%);
+      border: none;
       width: 100%;
       padding: 10px;
-      font-weight: 600;
+      font-weight: bold;
+      color: white;
+      transition: all 0.3s ease;
     }
-
-    .password-toggle {
+ 
+    .btn-primary:hover {
+      background: linear-gradient(90.61deg, #10B581 1.77%, #0D9687 97.92%);
+      box-shadow: 0 4px 15px rgba(229, 227, 250, 0.466);
+    }
+ 
+    .back-link {
       position: absolute;
-      right: 12px;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 20px;
+      left: 30px;
+      color: #10B581;
+      font-weight: 500;
+      text-decoration: none;
+    }
+ 
+    .form-label {
+      text-align: left;
+      display: block;
+      margin-top: 10px;
+    }
+ 
+    .form-check {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+ 
+    .form-check-label, .forgot-link {
+      font-size: 0.9rem;
+    }
+ 
+    .forgot-link {
+      color: black;
+      text-decoration: none;
+    }
+ 
+    .forgot-link:hover {
+      text-decoration: underline;
+    }
+ 
+    .input-group-text {
+      background-color: transparent;
+      border-right: none;
+    }
+    .form-control.with-icon {
+      border-left: none;
+    }
+    .password-toggle {
       cursor: pointer;
-      color: #999;
+      background-color: transparent;
+      border-left: none;
     }
-
-    .signup-link {
-      margin-top: 15px;
-      text-align: center;
-      font-size: 13px;
+   
+    /* Blue icon colors */
+    .fa-user, .fa-lock {
+      color: #10B581; /* Google blue color */
     }
-    .login-btn {
-  padding: 8px 16px;
-  font-size: 15px;
-  font-weight: 600;
-  background-color: #0d6efd;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-}
-
-.login-btn:hover {
-  background-color: #0b5ed7;
-  color: #fff;
-}
-
+   
+    .password-toggle i {
+      color: #10B581;
+      transition: color 0.3s ease;
+    }
+   
+    .password-toggle:hover i {
+      color: #10B581;
+    }
+   
+    /* Input group border styling */
+    .input-group {
+      border: 1px solid #ced4da;
+      border-radius: 0.375rem;
+      transition: border-color 0.15s ease-in-out;
+    }
+   
+    .input-group:focus-within {
+      border-color: #10B581 #0D9687;
+    }
       </style>
 </head>
-      <body>
-       <div class="logo-icon">
-    <i class="fas fa-user-shield"></i>
-  </div>
-  <h2 class="login-title">Manager Portal</h2>
-  <p class="login-subtitle">Sign in to manage your leave requests</p>
+<body>
 
+            <a href="Indexmain.htm" class="back-link">&larr; Back</a>
+ 
+ 
+<div class="portal-header">
+  <svg width="50" height="50" viewBox="5 5 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="40" height="40" rx="10" fill="url(#paint0_linear_10_134)"/>
+    <path d="M4.41669 31.3333V29.9167C4.41669 27.2866 5.46148 24.7643 7.32121 22.9045C9.18095 21.0448 11.7033 20 14.3334 20C16.9634 20 19.4858 21.0448 21.3455 22.9045C23.2052 24.7643 24.25 27.2866 24.25 29.9167V31.3333" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    <path d="M21.4167 22.8333C21.4167 20.9547 22.163 19.153 23.4913 17.8247C24.8197 16.4963 26.6214 15.75 28.5 15.75C29.4302 15.75 30.3513 15.9332 31.2107 16.2892C32.0701 16.6452 32.8509 17.1669 33.5087 17.8247C34.1664 18.4824 34.6882 19.2633 35.0442 20.1227C35.4001 20.982 35.5834 21.9031 35.5834 22.8333V23.5417" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    <path d="M14.3334 20C15.8362 20 17.2776 19.403 18.3403 18.3403C19.403 17.2776 20 15.8362 20 14.3333C20 12.8304 19.403 11.3891 18.3403 10.3264C17.2776 9.26369 15.8362 8.66667 14.3334 8.66667C12.8305 8.66667 11.3891 9.26369 10.3264 10.3264C9.26371 11.3891 8.66669 12.8304 8.66669 14.3333C8.66669 15.8362 9.26371 17.2776 10.3264 18.3403C11.3891 19.403 12.8305 20 14.3334 20ZM28.5 15.75C29.6272 15.75 30.7082 15.3022 31.5052 14.5052C32.3023 13.7082 32.75 12.6272 32.75 11.5C32.75 10.3728 32.3023 9.29183 31.5052 8.49480C30.7082 7.69777 29.6272 7.25 28.5 7.25C27.3729 7.25 26.2918 7.69777 25.4948 8.49480C24.6978 9.29183 24.25 10.3728 24.25 11.5C24.25 12.6272 24.6978 13.7082 25.4948 14.5052C26.2918 15.3022 27.3729 15.75 28.5 15.75Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <defs>
+      <linearGradient id="paint0_linear_10_134" x1="2" y1="1.5" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#6951F5"/>
+        <stop offset="0.889474" stop-color="#7526FC"/>
+      </linearGradient>
+    </defs>
+  </svg>
+  <h1>Manager Portal</h1>
+  <p>Sign in to manage your leave request</p>
+</div>
+  
   <div class="login-container">
-    <div id="message"></div>
-
+    <h2 class="text-center mb-4">Welcome Back!</h2>
+ 
     <form id="loginForm">
-      <div class="form-group">
-        <label for="username">Username or Email</label>
+      <div class="mb-3 text-start">
+        <label for="username" class="form-label">Username or Email *</label>
         <div class="input-group">
-          <i class="fas fa-user"></i>
-          <input type="text" id="username" class="form-control" placeholder="Enter your username or email" required />
+          <span class="input-group-text"><i class="fas fa-user"></i></span>
+          <input type="text" class="form-control with-icon" id="username" placeholder="Enter username or email">
         </div>
       </div>
-
-      <div class="form-group">
-        <label for="password">Password</label>
+ 
+      <div class="mb-3 text-start">
+        <label for="password" class="form-label">Password *</label>
         <div class="input-group">
-          <i class="fas fa-lock"></i>
-          <input type="password" id="password" class="form-control" placeholder="Enter your password" required />
-          <i class="fas fa-eye password-toggle" onclick="togglePassword()"></i>
+          <span class="input-group-text"><i class="fas fa-lock"></i></span>
+          <input type="password" class="form-control with-icon" id="password" placeholder="Enter your password">
+          <span class="input-group-text password-toggle" onclick="togglePassword()">
+            <i class="fas fa-eye"></i>
+          </span>
         </div>
       </div>
-
-      <div class="form-options">
-        <div class="remember-me">
-          <input type="checkbox" id="remember" />
-          <label for="remember">Remember me</label>
+ 
+      <div class="form-check">
+        <div>
+          <input class="form-check-input" type="checkbox" id="rememberMe">
+          <label class="form-check-label" for="rememberMe">Remember me</label>
         </div>
-        <a href="#" class="forgot-password">Forgot Password?</a>
+        <a href="#" class="forgot-link">Forgot Password?</a>
       </div>
-        <button type="submit" class="login-btn">
-                    <div class="loading" id="loading"></div>
-                    <i class="fas fa-sign-in-alt"></i>
-                    Sign In
-                </button>
-</form>
-
-    <div class="signup-link">
-      Don’t have an account? <a href="#">Sign up here</a>
-    </div>
+ 
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </form>
+    <div id="message" class="mt-3 text-center"></div>
   </div>
+ 
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+ 
 
-     <script>
-      // 🔒 Show/Hide Password Toggle
-             function togglePassword() {
-             const passwordInput = document.getElementById("password");
-             const toggleIcon = document.querySelector(".password-toggle");
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+  
+    function togglePassword() {
+      const passwordInput = document.getElementById("password");
+      const toggleIcon = document.querySelector(".password-toggle");
 
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-    toggleIcon.classList.remove("fa-eye");
-    toggleIcon.classList.add("fa-eye-slash");
-  } else {
-    passwordInput.type = "password";
-    toggleIcon.classList.remove("fa-eye-slash");
-    toggleIcon.classList.add("fa-eye");
-  }
-}
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        toggleIcon.classList.remove("fa-eye");
+        toggleIcon.classList.add("fa-eye-slash");
+      } else {
+        passwordInput.type = "password";
+        toggleIcon.classList.remove("fa-eye-slash");
+        toggleIcon.classList.add("fa-eye");
+      }
+    }
 
+    window.togglePassword = togglePassword; 
 
-document.getElementById("loginForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+  
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
 
-  const username = document.getElementById("username").value.trim();
-  const password = document.getElementById("password").value.trim();
-  const messageDiv = document.getElementById("message");
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const messageDiv = document.getElementById("message");
 
-  const savedUser = JSON.parse(localStorage.getItem("managerUser"));
+      const savedUser = JSON.parse(localStorage.getItem("managerUser"));
 
-  if (
-    savedUser &&
-    (username === savedUser.username || username === savedUser.email) &&
-    password === savedUser.password
-  ) {
-    localStorage.setItem("isManagerLoggedIn", "true");
-    window.location.href = "manager-dashboard.html"; // 👈 Redirect to manager dashboard
-  } else {
-    messageDiv.innerHTML = `<div class="alert alert-danger mt-3">❌ Invalid username or password</div>`;
-  }
-});
+      if (
+        savedUser &&
+        (username === savedUser.username || username === savedUser.email) &&
+        password === savedUser.password
+      ) {
+        localStorage.setItem("isManagerLoggedIn", "true");
+        window.location.href = "manager-dashboard.html";
+      } else {
+        messageDiv.innerHTML = `<div class="alert alert-danger mt-3">❌ Invalid username or password</div>`;
+      }
+    });
+  });
 </script>
 </body>
 </html>

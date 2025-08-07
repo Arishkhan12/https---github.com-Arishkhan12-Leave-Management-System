@@ -1,12 +1,12 @@
 
-        // View Details functionality
+        
         document.querySelectorAll('.view-details-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 alert('View details functionality');
             });
         });
 
-        // Approve button functionality
+        
         document.querySelectorAll('.approve-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const requestItem = this.closest('.request-item');
@@ -20,7 +20,6 @@
             });
         });
 
-        // Reject button functionality
         document.querySelectorAll('.reject-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const requestItem = this.closest('.request-item');
