@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Employee Portal Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+  <style>
+     
+    body {
+      background: linear-gradient(to right, #e6d4fc, #f4d6ff);
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 40px;
+    }
+ 
+    .portal-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+ 
+    .portal-header img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+ 
+    .portal-header h1 {
+      font-weight: bold;
+      color: #6A4EF5;
+    }
+ 
+    .portal-header p {
+      color: #7E7D7D;
+      margin-top: -5px;
+    }
+ 
+    .login-container {
+      background-color: white;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 450px;
+    }
+ 
+    .form-control:focus {
+      box-shadow: none;
+      border-color: #7b2cbf;
+    }
+ 
+    .form-check-input:checked {
+      background-color: #7b2cbf;
+      border-color: #7b2cbf;
+    }
+ 
+    .btn-primary {
+       background: linear-gradient(90.61deg, #675CF3 1.77%, #3B358D 97.92%);
+      border: none;
+      width: 100%;
+      padding: 10px;
+      font-weight: bold;
+      color: white;
+      transition: all 0.3s ease;
+    }
+ 
+    .btn-primary:hover {
+      background: linear-gradient(90.61deg, #3B358D 1.77%, #675CF3 97.92%);
+  box-shadow: 0 4px 15px rgba(103, 92, 243, 0.3);
+    }
+ 
+    .back-link {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      color: #7b2cbf;
+      font-weight: 500;
+      text-decoration: none;
+    }
+ 
+    .form-label {
+      text-align: left;
+      display: block;
+      margin-top: 10px;
+    }
+ 
+    .form-check {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+ 
+    .form-check-label, .forgot-link {
+      font-size: 0.9rem;
+    }
+ 
+    .forgot-link {
+      color: #5a189a;
+      text-decoration: none;
+    }
+ 
+    .forgot-link:hover {
+      text-decoration: underline;
+    }
+
+    .input-group-text {
+      background-color: transparent;
+      border-right: none;
+    }
+    .form-control.with-icon {
+      border-left: none;
+    }
+    .password-toggle {
+      cursor: pointer;
+      background-color: transparent;
+      border-left: none;
+    }
+    
+    /* Blue icon colors */
+    .fa-user, .fa-lock {
+      color: #4285f4; /* Google blue color */
+    }
+    
+    .password-toggle i {
+      color: #4285f4;
+      transition: color 0.3s ease;
+    }
+    
+    .password-toggle:hover i {
+      color: #3367d6; 
+    }
+    
+    /* Input group border styling */
+    .input-group {
+      border: 1px solid #ced4da;
+      border-radius: 0.375rem;
+      transition: border-color 0.15s ease-in-out;
+    }
+    
+    .input-group:focus-within {
+      border-color: #675CF3 #3B358D;
+    }
+  </style>
+    
+   
+</head>
+<body>
+  <a href="Indexmain.htm" class="back-link">&larr; Back</a>
+
+ <!-- Add Header Section before the login  box  -->
+<div class="portal-header">
+  <svg width="50" height="50" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="40" height="40" rx="10" fill="url(#paint0_linear_10_134)"/>
+    <path d="M4.41669 31.3333V29.9167C4.41669 27.2866 5.46148 24.7643 7.32121 22.9045C9.18095 21.0448 11.7033 20 14.3334 20C16.9634 20 19.4858 21.0448 21.3455 22.9045C23.2052 24.7643 24.25 27.2866 24.25 29.9167V31.3333" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    <path d="M21.4167 22.8333C21.4167 20.9547 22.163 19.153 23.4913 17.8247C24.8197 16.4963 26.6214 15.75 28.5 15.75C29.4302 15.75 30.3513 15.9332 31.2107 16.2892C32.0701 16.6452 32.8509 17.1669 33.5087 17.8247C34.1664 18.4824 34.6882 19.2633 35.0442 20.1227C35.4001 20.982 35.5834 21.9031 35.5834 22.8333V23.5417" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    <path d="M14.3334 20C15.8362 20 17.2776 19.403 18.3403 18.3403C19.403 17.2776 20 15.8362 20 14.3333C20 12.8304 19.403 11.3891 18.3403 10.3264C17.2776 9.26369 15.8362 8.66667 14.3334 8.66667C12.8305 8.66667 11.3891 9.26369 10.3264 10.3264C9.26371 11.3891 8.66669 12.8304 8.66669 14.3333C8.66669 15.8362 9.26371 17.2776 10.3264 18.3403C11.3891 19.403 12.8305 20 14.3334 20ZM28.5 15.75C29.6272 15.75 30.7082 15.3022 31.5052 14.5052C32.3023 13.7082 32.75 12.6272 32.75 11.5C32.75 10.3728 32.3023 9.29183 31.5052 8.49480C30.7082 7.69777 29.6272 7.25 28.5 7.25C27.3729 7.25 26.2918 7.69777 25.4948 8.49480C24.6978 9.29183 24.25 10.3728 24.25 11.5C24.25 12.6272 24.6978 13.7082 25.4948 14.5052C26.2918 15.3022 27.3729 15.75 28.5 15.75Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <defs>
+      <linearGradient id="paint0_linear_10_134" x1="2" y1="1.5" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#6951F5"/>
+        <stop offset="0.889474" stop-color="#7526FC"/>
+      </linearGradient>
+    </defs>
+  </svg>
+  <h1>Employee Portal</h1>
+  <p>Sign in to manage your leave request</p>
+</div>
+  <!-- Login Box -->
+  <div class="login-container">
+    <h2 class="text-center mb-4">Welcome Back!</h2>
+ 
+    <form id="loginForm">
+      <div class="mb-3 text-start">
+        <label for="username" class="form-label">Username or Email *</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="fas fa-user"></i></span>
+          <input type="text" class="form-control with-icon" id="username" placeholder="Enter username or email">
+        </div>
+      </div>
+ 
+      <div class="mb-3 text-start">
+        <label for="password" class="form-label">Password *</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="fas fa-lock"></i></span>
+          <input type="password" class="form-control with-icon" id="password" placeholder="Enter your password">
+          <span class="input-group-text password-toggle" onclick="togglePassword()">
+            <i class="fas fa-eye"></i>
+          </span>
+        </div>
+      </div>
+ 
+      <div class="form-check">
+        <div>
+          <input class="form-check-input" type="checkbox" id="rememberMe">
+          <label class="form-check-label" for="rememberMe">Remember me</label>
+        </div>
+        <a href="#" class="forgot-link">Forgot Password?</a>
+      </div>
+ 
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </form>
+  </div>
+ 
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <script>
+    function togglePassword() {
+  const passwordInput = document.getElementById("password");
+  const toggleIcon = document.querySelector(".password-toggle");
+
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    toggleIcon.classList.remove("fa-eye");
+    toggleIcon.classList.add("fa-eye-slash");
+  } else {
+    passwordInput.type = "password";
+    toggleIcon.classList.remove("fa-eye-slash");
+    toggleIcon.classList.add("fa-eye");
+  }
+}
+
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const usernameInput = document.getElementById("username").value.trim();
+  const passwordInput = document.getElementById("password").value.trim();
+  const messageDiv = document.getElementById("message");
+
+  
+  const savedUser = JSON.parse(localStorage.getItem("employeeUser"));
+
+  
+  if (
+    savedUser &&
+    (usernameInput === savedUser.username || usernameInput === savedUser.email) &&
+    passwordInput === savedUser.password
+  ) {
+    
+    localStorage.setItem("isEmployeeLoggedIn", "true");
+
+    
+    const loading = document.getElementById("loading");
+    loading.innerHTML = `<div class="spinner-border text-light spinner-border-sm" role="status"></div>`;
+
+    setTimeout(() => {
+      window.location.href = "login-dashboard.html";
+    }, 1000); 
+  } else {
+    messageDiv.innerHTML = `<div class="alert alert-danger mt-3">❌ Invalid username or password</div>`;
+  }
+});
+
+  </script>
+</body>
+</html>
