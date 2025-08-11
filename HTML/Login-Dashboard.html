@@ -1,365 +1,365 @@
-<!DOCTYPE html>
-<html lang="en">
- 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leave Management Dashboard</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-        body {
-            background-color: #f5f0ff;
-            font-family: 'Segoe UI', sans-serif;
-        }
- 
-        .card {
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        }
- 
-        .progress {
-            height: 8px;
-            border-radius: 50px;
-        }
- 
-        .card-title {
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
- 
-        .leave-count {
-            font-size: 2.8rem;
-            font-weight: 600;
-        }
- 
-        .apply-btn {
-            font-weight: 500;
-            border-radius: 8px;
-            background: linear-gradient(90deg, #675CF3 0%, #3B358D 100%);
-        }
- 
-.navbar {
-  background-color: #ffffff;
-  box-shadow: 0px 2px 10px rgba(117, 38, 252, 0.1);
-  padding: 12px 32px;
-  border-bottom: 1px solid #f0eaff;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
- 
- 
-.navbar-brand {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #5C37ED
- !important;
-  letter-spacing: 0.5px;
-}
- 
-.user-pill {
-  background-color: #E8DBFF;
-  border-radius: 50px;
-  padding: 6px 18px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 500;
-  font-size: 0.95rem;
-  color: #7526FC;
-  box-shadow: 0px 2px 6px rgba(117, 38, 252, 0.1);
-}
-.username-purple {
-  color: #5C37ED;
-}
- 
-.user-pill svg {
-  width: 20px;
-  height: 20px;
-  stroke: #7526FC;
-}
- 
-.navbar a.text-primary {
-  color: #7526FC !important;
-  font-weight: 500;
-  transition: 0.2s ease;
-}
- 
-.navbar a.text-primary:hover {
-  text-decoration: underline;
-  color: #5212b5 !important;
-}
-        .status-approved {
-            background-color: #d1e7dd;
-            color: #026358 ;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
- 
-        .status-pending {
-            background-color: #fff3cd;
-            color: #664d03;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
- 
-        .topbar {
-            background-color: white;
-            padding: 10px 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
-        }
- 
-        .recent-card {
-            background-color: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-        }
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Management Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+            body {
+                background-color: #f5f0ff;
+                font-family: 'Segoe UI', sans-serif;
+            }
+    
+            .card {
+                border: none;
+                border-radius: 12px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            }
+    
+            .progress {
+                height: 8px;
+                border-radius: 50px;
+            }
+    
+            .card-title {
+                font-weight: 700;
+                font-size: 1.2rem;
+            }
+    
+            .leave-count {
+                font-size: 2.8rem;
+                font-weight: 600;
+            }
+    
+            .apply-btn {
+                font-weight: 500;
+                border-radius: 8px;
+                background: linear-gradient(90deg, #675CF3 0%, #3B358D 100%);
+            }
+    
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0px 2px 10px rgba(117, 38, 252, 0.1);
+      padding: 12px 32px;
+      border-bottom: 1px solid #f0eaff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #5C37ED
+    !important;
+      letter-spacing: 0.5px;
+    }
+    
     .user-pill {
-      position: absolute;
-      width: 196px;
-      height: 40px;
-      left: 0px;
-      top: 5px;
-      background: #E8DBFF;
+      background-color: #E8DBFF;
       border-radius: 50px;
+      padding: 6px 18px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 0 12px;
+      gap: 10px;
       font-weight: 500;
+      font-size: 0.95rem;
       color: #7526FC;
+      box-shadow: 0px 2px 6px rgba(117, 38, 252, 0.1);
     }
- 
+    .username-purple {
+      color: #5C37ED;
+    }
+    
     .user-pill svg {
       width: 20px;
       height: 20px;
       stroke: #7526FC;
     }
- 
-    .custom-header {
-      position: relative;
-      height: 60px;
-      padding: 10px 20px;
-      background-color: white;
-      border-bottom: 1px solid #eee;
+    
+    .navbar a.text-primary {
+      color: #7526FC !important;
+      font-weight: 500;
+      transition: 0.2s ease;
     }
- 
-</style>
-</head>
- 
-<body>
+    
+    .navbar a.text-primary:hover {
+      text-decoration: underline;
+      color: #5212b5 !important;
+    }
+            .status-approved {
+                background-color: #d1e7dd;
+                color: #026358 ;
+                padding: 3px 10px;
+                border-radius: 20px;
+                font-size: 0.9rem;
+            }
+    
+            .status-pending {
+                background-color: #fff3cd;
+                color: #664d03;
+                padding: 3px 10px;
+                border-radius: 20px;
+                font-size: 0.9rem;
+            }
+    
+            .topbar {
+                background-color: white;
+                padding: 10px 20px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+            }
+    
+            .recent-card {
+                background-color: white;
+                padding: 20px;
+                border-radius: 12px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+            }
+        .user-pill {
+          position: absolute;
+          width: 196px;
+          height: 40px;
+          left: 0px;
+          top: 5px;
+          background: #E8DBFF;
+          border-radius: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          padding: 0 12px;
+          font-weight: 500;
+          color: #7526FC;
+        }
+    
+        .user-pill svg {
+          width: 20px;
+          height: 20px;
+          stroke: #7526FC;
+        }
+    
+        .custom-header {
+          position: relative;
+          height: 60px;
+          padding: 10px 20px;
+          background-color: white;
+          border-bottom: 1px solid #eee;
+        }
+    
+    </style>
+    </head>
+    
+    <body>
 
- 
-<!-- Header Section -->
-<nav class="navbar navbar-light bg-white shadow-sm px-4 py-3 d-flex justify-content-between align-items-center">
-    <header>
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="32" height="32" rx="5" fill="url(#paint0_linear_42_171)"/>
-<path d="M23.3125 8.16671H20.1875V6.60421C20.1875 6.46607 20.1327 6.3336 20.035 6.23592C19.9373 6.13825 19.8048 6.08337 19.6667 6.08337C19.5286 6.08337 19.3961 6.13825 19.2984 6.23592C19.2007 6.3336 19.1459 6.46607 19.1459 6.60421V8.16671H11.8542V6.60421C11.8542 6.46607 11.7993 6.3336 11.7017 6.23592C11.604 6.13825 11.4715 6.08337 11.3334 6.08337C11.1952 6.08337 11.0628 6.13825 10.9651 6.23592C10.8674 6.3336 10.8125 6.46607 10.8125 6.60421V8.16671H7.68754C6.99713 8.16753 6.33523 8.44217 5.84703 8.93036C5.35883 9.41856 5.0842 10.0805 5.08337 10.7709V24.3125C5.0842 25.003 5.35883 25.6649 5.84703 26.153C6.33523 26.6412 6.99713 26.9159 7.68754 26.9167H23.3125C24.0032 26.9167 24.6656 26.6423 25.154 26.154C25.6423 25.6656 25.9167 25.0032 25.9167 24.3125V10.7709C25.9167 10.0802 25.6423 9.41783 25.154 8.92945C24.6656 8.44107 24.0032 8.16671 23.3125 8.16671ZM24.875 24.3125C24.875 24.7269 24.7104 25.1244 24.4174 25.4174C24.1244 25.7104 23.7269 25.875 23.3125 25.875H7.68754C7.27314 25.875 6.87571 25.7104 6.58269 25.4174C6.28966 25.1244 6.12504 24.7269 6.12504 24.3125V15.4584H24.875V24.3125ZM24.875 14.4167H6.12504V10.7709C6.12504 9.90837 6.82296 9.20837 7.68754 9.20837H10.8125V10.7709C10.8125 10.909 10.8674 11.0415 10.9651 11.1392C11.0628 11.2368 11.1952 11.2917 11.3334 11.2917C11.4715 11.2917 11.604 11.2368 11.7017 11.1392C11.7993 11.0415 11.8542 10.909 11.8542 10.7709V9.20837H19.1459V10.7709C19.1459 10.909 19.2007 11.0415 19.2984 11.1392C19.3961 11.2368 19.5286 11.2917 19.6667 11.2917C19.8048 11.2917 19.9373 11.2368 20.035 11.1392C20.1327 11.0415 20.1875 10.909 20.1875 10.7709V9.20837H23.3125C23.7269 9.20837 24.1244 9.37299 24.4174 9.66602C24.7104 9.95904 24.875 10.3565 24.875 10.7709V14.4167Z" fill="white"/>
-<defs>
-<linearGradient id="paint0_linear_42_171" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-<stop stop-color="#6B4BF6"/>
-<stop offset="1" stop-color="#2B09CA"/>
-</linearGradient>
-</defs>
-</svg>
-<a class="navbar-brand fw-bold text-primary" href="#">Dashboard</a>
- </header>
- 
- 
- 
-  <div class="d-flex align-items-center gap-3">
-    <!-- User Info Box -->
-    <div class="d-flex align-items-center bg-light px-3 py-2 rounded-pill" style="background-color: #E8DBFF;">
-      <!-- User-name SVG Icon -->
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6 21V19C6 17.9391 6.42143 16.9217 7.17157 16.1716C7.92172 15.4214 8.93913 15 10 15H14C15.0609 15 16.0783 15.4214 16.8284 16.1716C17.5786 16.9217 18 17.9391 18 19V21M8 7C8 8.06087 8.42143 9.07828 9.17157 9.82843C9.92172 10.5786 10.9391 11 12 11C13.0609 11 14.0783 10.5786 14.8284 9.82843C15.5786 9.07828 16 8.06087 16 7C16 5.93913 15.5786 4.92172 14.8284 4.17157C14.0783 3.42143 13.0609 3 12 3C10.9391 3 9.92172 3.42143 9.17157 4.17157C8.42143 4.92172 8 5.93913 8 7Z" stroke="#7526FC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <!-- span class for Username -->
-     <span class="ms-2 fw-medium" style="color: #5C37ED !important;">Abdullah Mian</span>
- 
-    </div>
-   
-    <!--  Link for logout  -->
-    <a href="Emp-portal.html" class="text-decoration-none text-primary fw-medium">Logout</a>
-  </div>
-</nav>
- 
- 
-    <div class="container mt-4">
-<h4>Hello, Abdullah </h4>
- 
-        <!-- Cards -->
- 
-        <!-- card1 -->
-<div class="row g-3 mt-2">
-<div class="col-md-4">
-<div class="card p-3 position-relative" style="background-color: #F6F3FF; border: none; border-radius: 12px;">
-  <!-- icon  -->
-  <div style="position: absolute; top: 12px; right: 12px;">
+    
+    <!-- Header Section -->
+    <nav class="navbar navbar-light bg-white shadow-sm px-4 py-3 d-flex justify-content-between align-items-center">
+        <header>
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="32" height="32" rx="5" fill="url(#paint0_linear_42_171)"/>
-<path d="M23.3125 8.16671H20.1875V6.60421C20.1875 6.46607 20.1327 6.3336 20.035 6.23592C19.9373 6.13825 19.8048 6.08337 19.6667 6.08337C19.5286 6.08337 19.3961 6.13825 19.2984 6.23592C19.2007 6.3336 19.1459 6.46607 19.1459 6.60421V8.16671H11.8542V6.60421C11.8542 6.46607 11.7993 6.3336 11.7017 6.23592C11.604 6.13825 11.4715 6.08337 11.3334 6.08337C11.1952 6.08337 11.0628 6.13825 10.9651 6.23592C10.8674 6.3336 10.8125 6.46607 10.8125 6.60421V8.16671H7.68754C6.99713 8.16753 6.33523 8.44217 5.84703 8.93036C5.35883 9.41856 5.0842 10.0805 5.08337 10.7709V24.3125C5.0842 25.003 5.35883 25.6649 5.84703 26.153C6.33523 26.6412 6.99713 26.9159 7.68754 26.9167H23.3125C24.0032 26.9167 24.6656 26.6423 25.154 26.154C25.6423 25.6656 25.9167 25.0032 25.9167 24.3125V10.7709C25.9167 10.0802 25.6423 9.41783 25.154 8.92945C24.6656 8.44107 24.0032 8.16671 23.3125 8.16671ZM24.875 24.3125C24.875 24.7269 24.7104 25.1244 24.4174 25.4174C24.1244 25.7104 23.7269 25.875 23.3125 25.875H7.68754C7.27314 25.875 6.87571 25.7104 6.58269 25.4174C6.28966 25.1244 6.12504 24.7269 6.12504 24.3125V15.4584H24.875V24.3125ZM24.875 14.4167H6.12504V10.7709C6.12504 9.90837 6.82296 9.20837 7.68754 9.20837H10.8125V10.7709C10.8125 10.909 10.8674 11.0415 10.9651 11.1392C11.0628 11.2368 11.1952 11.2917 11.3334 11.2917C11.4715 11.2917 11.604 11.2368 11.7017 11.1392C11.7993 11.0415 11.8542 10.909 11.8542 10.7709V9.20837H19.1459V10.7709C19.1459 10.909 19.2007 11.0415 19.2984 11.1392C19.3961 11.2368 19.5286 11.2917 19.6667 11.2917C19.8048 11.2917 19.9373 11.2368 20.035 11.1392C20.1327 11.0415 20.1875 10.909 20.1875 10.7709V9.20837H23.3125C23.7269 9.20837 24.1244 9.37299 24.4174 9.66602C24.7104 9.95904 24.875 10.3565 24.875 10.7709V14.4167Z" fill="white"/>
-<defs>
-<linearGradient id="paint0_linear_42_171" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-<stop stop-color="#6B4BF6"/>
-<stop offset="1" stop-color="#2B09CA"/>
-</linearGradient>
-</defs>
-</svg>
-  </div>
- 
-<h5 class="card-title mb-3" style="font-weight: 700 ; color : #333;"> Annual Leave </h5>
-<div class="d-flex justify-content-between align-items-end"></div>
-<p class="mb-1" style="color: #666; font-size: 0.9rem;">Available days</p>
-  <!-- made two divs for the muted and left most text  -->
-<div class="leave-count d-flex justify-content-between align-items-center">
-  <div class="leave-days fs-1 fw-bold">10</div>
-  <div class="total-days text-muted fs-6">of 20 days</div>
-</div>
-<div class="progress mt-2">
-<div class="progress-bar bg-primary" style="width: 50%; background: linear-gradient(90deg, #6B4BF6 40.87%, #2200C4 100%)";></div>
-</div>
-</div>
-</div>
- 
-      <!-- card no 2 -->
- <div class="col-md-4">
-<div class="card p-3" style="background-color: #F5FFFF;">
-<div class="d-flex align-items-center justify-content-between mb-2">
-  <h5 class="card-title mb-0">Sick Leave</h5>
-  <div style="width: 39px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, #0D9687 8.17%, #03776B 88.95%); display: flex; align-items: center; justify-content: center;">
-    <svg width="20" height="20" viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
-      <path d="M15.3334 4C18.6928 4 21.9146 5.33452 24.2901 7.70998C26.6656 10.0854 28.0001 13.3073 28.0001 16.6667C28.0001 20.0261 26.6656 23.2479 24.2901 25.6234C21.9146 27.9988 18.6928 29.3333 15.3334 29.3333C11.974 29.3333 8.75219 27.9988 6.37673 25.6234C4.00127 23.2479 2.66675 20.0261 2.66675 16.6667C2.66675 13.3073 4.00127 10.0854 6.37673 7.70998C8.75219 5.33452 11.974 4 15.3334 4ZM15.3334 5.33333C12.3276 5.33333 9.44495 6.52738 7.31954 8.65279C5.19413 10.7782 4.00008 13.6609 4.00008 16.6667C4.00008 19.6725 5.19413 22.5551 7.31954 24.6805C9.44495 26.806 12.3276 28 15.3334 28C16.8217 28 18.2955 27.7069 19.6705 27.1373C21.0455 26.5677 22.2949 25.7329 23.3473 24.6805C24.3997 23.6281 25.2345 22.3788 25.8041 21.0037C26.3736 19.6287 26.6667 18.155 26.6667 16.6667C26.6667 13.6609 25.4727 10.7782 23.3473 8.65279C21.2219 6.52738 18.3392 5.33333 15.3334 5.33333ZM14.6667 9.33333H16.0001V16.56L22.2668 20.1733L21.6001 21.3333L14.6667 17.3333V9.33333Z"/>
+    <rect width="32" height="32" rx="5" fill="url(#paint0_linear_42_171)"/>
+    <path d="M23.3125 8.16671H20.1875V6.60421C20.1875 6.46607 20.1327 6.3336 20.035 6.23592C19.9373 6.13825 19.8048 6.08337 19.6667 6.08337C19.5286 6.08337 19.3961 6.13825 19.2984 6.23592C19.2007 6.3336 19.1459 6.46607 19.1459 6.60421V8.16671H11.8542V6.60421C11.8542 6.46607 11.7993 6.3336 11.7017 6.23592C11.604 6.13825 11.4715 6.08337 11.3334 6.08337C11.1952 6.08337 11.0628 6.13825 10.9651 6.23592C10.8674 6.3336 10.8125 6.46607 10.8125 6.60421V8.16671H7.68754C6.99713 8.16753 6.33523 8.44217 5.84703 8.93036C5.35883 9.41856 5.0842 10.0805 5.08337 10.7709V24.3125C5.0842 25.003 5.35883 25.6649 5.84703 26.153C6.33523 26.6412 6.99713 26.9159 7.68754 26.9167H23.3125C24.0032 26.9167 24.6656 26.6423 25.154 26.154C25.6423 25.6656 25.9167 25.0032 25.9167 24.3125V10.7709C25.9167 10.0802 25.6423 9.41783 25.154 8.92945C24.6656 8.44107 24.0032 8.16671 23.3125 8.16671ZM24.875 24.3125C24.875 24.7269 24.7104 25.1244 24.4174 25.4174C24.1244 25.7104 23.7269 25.875 23.3125 25.875H7.68754C7.27314 25.875 6.87571 25.7104 6.58269 25.4174C6.28966 25.1244 6.12504 24.7269 6.12504 24.3125V15.4584H24.875V24.3125ZM24.875 14.4167H6.12504V10.7709C6.12504 9.90837 6.82296 9.20837 7.68754 9.20837H10.8125V10.7709C10.8125 10.909 10.8674 11.0415 10.9651 11.1392C11.0628 11.2368 11.1952 11.2917 11.3334 11.2917C11.4715 11.2917 11.604 11.2368 11.7017 11.1392C11.7993 11.0415 11.8542 10.909 11.8542 10.7709V9.20837H19.1459V10.7709C19.1459 10.909 19.2007 11.0415 19.2984 11.1392C19.3961 11.2368 19.5286 11.2917 19.6667 11.2917C19.8048 11.2917 19.9373 11.2368 20.035 11.1392C20.1327 11.0415 20.1875 10.909 20.1875 10.7709V9.20837H23.3125C23.7269 9.20837 24.1244 9.37299 24.4174 9.66602C24.7104 9.95904 24.875 10.3565 24.875 10.7709V14.4167Z" fill="white"/>
+    <defs>
+    <linearGradient id="paint0_linear_42_171" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#6B4BF6"/>
+    <stop offset="1" stop-color="#2B09CA"/>
+    </linearGradient>
+    </defs>
     </svg>
-  </div>
-</div>
- 
-<p class="mb-1" style="color: #666; font-size: 0.9rem;">Available days</p>
- 
-<div class="leave-count d-flex justify-content-between align-items-center">
-  <div class="leave-days fs-1 fw-bold">8</div>
- 
-  <div class="total-days text-muted fs-6">of 10 days</div>
-</div>
-<div class="progress mt-2">
-<div class="progress-bar bg-teal" style="width: 80% ; background: linear-gradient(90deg, #0D9687 40.87%, #016055 100%);"></div>
-</div>
-</div>
-</div>
- 
-            <div class="col-md-4">
-<div class="card p-3" style="background-color: #FFFAF4;">
-<div class="d-flex align-items-center justify-content-between mb-2">
-  <h5 class="card-title mb-0">Emergency Leave</h5>
-  <div style="width: 39px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, #FF8810 8.17%, #BC5F01 88.95%); display: flex; align-items: center; justify-content: center;">
-    <svg width="20" height="20" viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
-      <path d="M14.6668 17.3334H8.00009C7.62231 17.3334 7.30586 17.2054 7.05075 16.9494C6.79564 16.6934 6.66764 16.3769 6.66675 16C6.66586 15.6231 6.79386 15.3067 7.05075 15.0507C7.30764 14.7947 7.62409 14.6667 8.00009 14.6667H14.6668V8.00003C14.6668 7.62225 14.7948 7.3058 15.0508 7.05069C15.3068 6.79558 15.6232 6.66758 16.0001 6.66669C16.377 6.6658 16.6939 6.7938 16.9508 7.05069C17.2076 7.30758 17.3352 7.62402 17.3334 8.00003V14.6667H24.0001C24.3779 14.6667 24.6948 14.7947 24.9508 15.0507C25.2068 15.3067 25.3343 15.6231 25.3334 16C25.3325 16.3769 25.2045 16.6938 24.9494 16.9507C24.6943 17.2076 24.3779 17.3351 24.0001 17.3334H17.3334V24C17.3334 24.3778 17.2054 24.6947 16.9494 24.9507C16.6934 25.2067 16.377 25.3342 16.0001 25.3334C15.6232 25.3325 15.3068 25.2045 15.0508 24.9494C14.7948 24.6942 14.6668 24.3778 14.6668 24V17.3334Z" fill="white"/>
+    <a class="navbar-brand fw-bold text-primary" href="#">Dashboard</a>
+    </header>
+    
+    
+    
+      <div class="d-flex align-items-center gap-3">
+        <!-- User Info Box -->
+        <div class="d-flex align-items-center bg-light px-3 py-2 rounded-pill" style="background-color: #E8DBFF;">
+          <!-- User-name SVG Icon -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 21V19C6 17.9391 6.42143 16.9217 7.17157 16.1716C7.92172 15.4214 8.93913 15 10 15H14C15.0609 15 16.0783 15.4214 16.8284 16.1716C17.5786 16.9217 18 17.9391 18 19V21M8 7C8 8.06087 8.42143 9.07828 9.17157 9.82843C9.92172 10.5786 10.9391 11 12 11C13.0609 11 14.0783 10.5786 14.8284 9.82843C15.5786 9.07828 16 8.06087 16 7C16 5.93913 15.5786 4.92172 14.8284 4.17157C14.0783 3.42143 13.0609 3 12 3C10.9391 3 9.92172 3.42143 9.17157 4.17157C8.42143 4.92172 8 5.93913 8 7Z" stroke="#7526FC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <!-- span class for Username -->
+        <span class="ms-2 fw-medium" style="color: #5C37ED !important;">Abdullah Mian</span>
+    
+        </div>
+      
+        <!--  Link for logout  -->
+        <a href="Emp-portal.html" class="text-decoration-none text-primary fw-medium">Logout</a>
+      </div>
+    </nav>
+    
+    
+        <div class="container mt-4">
+    <h4>Hello, Abdullah </h4>
+    
+            <!-- Cards -->
+    
+            <!-- card1 -->
+    <div class="row g-3 mt-2">
+    <div class="col-md-4">
+    <div class="card p-3 position-relative" style="background-color: #F6F3FF; border: none; border-radius: 12px;">
+      <!-- icon  -->
+      <div style="position: absolute; top: 12px; right: 12px;">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="32" height="32" rx="5" fill="url(#paint0_linear_42_171)"/>
+    <path d="M23.3125 8.16671H20.1875V6.60421C20.1875 6.46607 20.1327 6.3336 20.035 6.23592C19.9373 6.13825 19.8048 6.08337 19.6667 6.08337C19.5286 6.08337 19.3961 6.13825 19.2984 6.23592C19.2007 6.3336 19.1459 6.46607 19.1459 6.60421V8.16671H11.8542V6.60421C11.8542 6.46607 11.7993 6.3336 11.7017 6.23592C11.604 6.13825 11.4715 6.08337 11.3334 6.08337C11.1952 6.08337 11.0628 6.13825 10.9651 6.23592C10.8674 6.3336 10.8125 6.46607 10.8125 6.60421V8.16671H7.68754C6.99713 8.16753 6.33523 8.44217 5.84703 8.93036C5.35883 9.41856 5.0842 10.0805 5.08337 10.7709V24.3125C5.0842 25.003 5.35883 25.6649 5.84703 26.153C6.33523 26.6412 6.99713 26.9159 7.68754 26.9167H23.3125C24.0032 26.9167 24.6656 26.6423 25.154 26.154C25.6423 25.6656 25.9167 25.0032 25.9167 24.3125V10.7709C25.9167 10.0802 25.6423 9.41783 25.154 8.92945C24.6656 8.44107 24.0032 8.16671 23.3125 8.16671ZM24.875 24.3125C24.875 24.7269 24.7104 25.1244 24.4174 25.4174C24.1244 25.7104 23.7269 25.875 23.3125 25.875H7.68754C7.27314 25.875 6.87571 25.7104 6.58269 25.4174C6.28966 25.1244 6.12504 24.7269 6.12504 24.3125V15.4584H24.875V24.3125ZM24.875 14.4167H6.12504V10.7709C6.12504 9.90837 6.82296 9.20837 7.68754 9.20837H10.8125V10.7709C10.8125 10.909 10.8674 11.0415 10.9651 11.1392C11.0628 11.2368 11.1952 11.2917 11.3334 11.2917C11.4715 11.2917 11.604 11.2368 11.7017 11.1392C11.7993 11.0415 11.8542 10.909 11.8542 10.7709V9.20837H19.1459V10.7709C19.1459 10.909 19.2007 11.0415 19.2984 11.1392C19.3961 11.2368 19.5286 11.2917 19.6667 11.2917C19.8048 11.2917 19.9373 11.2368 20.035 11.1392C20.1327 11.0415 20.1875 10.909 20.1875 10.7709V9.20837H23.3125C23.7269 9.20837 24.1244 9.37299 24.4174 9.66602C24.7104 9.95904 24.875 10.3565 24.875 10.7709V14.4167Z" fill="white"/>
+    <defs>
+    <linearGradient id="paint0_linear_42_171" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#6B4BF6"/>
+    <stop offset="1" stop-color="#2B09CA"/>
+    </linearGradient>
+    </defs>
     </svg>
-  </div>
-</div>
- 
-<p class="mb-1" style="color: #666; font-size: 0.9rem;">Available days</p>
- 
- 
-<div class="leave-count d-flex justify-content-between align-items-center">
-  <div class="leave-days fs-1 fw-bold">3</div>
-  <div class="total-days text-muted fs-6">of 5 days</div>
-</div>
-<div class="progress mt-2">
-<div class="progress-bar " style="width: 60%;background: linear-gradient(90deg, #FF8810 40.87%, #BE6001 100%);
- 
-  "></div>
-</div>
-</div>
-</div>
-</div>
- 
-        <!-- Leave Button -->
-<div class="mt-4">
-<button class="btn btn-primary apply-btn">Apply for Leave</button>
-</div>
- 
-        <!-- Recent Leave Requests -->
-<div class="recent-card mt-4">
-  <div class="d-flex justify-content-between align-items-center mb-3">
-    <div class="d-flex align-items-center">
-      <!-- SVG Icon -->
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="32" height="32" rx="5" fill="url(#paint0_linear_42_172)"/>
-<path d="M20.1875 20.1875V24.875H7.6875V6.125H15.5V4.5625H7.6875C7.2731 4.5625 6.87567 4.72712 6.58265 5.02015C6.28962 5.31317 6.125 5.7106 6.125 6.125V24.875C6.125 25.2894 6.28962 25.6868 6.58265 25.9799C6.87567 26.2729 7.2731 26.4375 7.6875 26.4375H20.1875C20.6019 26.4375 20.9993 26.2729 21.2924 25.9799C21.5854 25.6868 21.75 25.2894 21.75 24.875V20.1875H20.1875Z" fill="white"/>
-<path d="M26.0781 7.50002L23.5 4.9219C23.2663 4.69286 22.9522 4.56458 22.625 4.56458C22.2978 4.56458 21.9837 4.69286 21.75 4.9219L10.8125 15.8594V20.1875H15.1328L26.0703 9.25002C26.2993 9.01636 26.4276 8.70221 26.4276 8.37502C26.4276 8.04783 26.2993 7.73368 26.0703 7.50002H26.0781ZM14.4844 18.625H12.375V16.5156L19.75 9.13283L21.8672 11.25L14.4844 18.625ZM22.9688 10.1485L20.8516 8.03127L22.625 6.25783L24.7422 8.37502L22.9688 10.1485Z" fill="white"/>
-<defs>
-<linearGradient id="paint0_linear_42_172" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-<stop stop-color="#6B4BF6"/>
-<stop offset="1" stop-color="#2B09CA"/>
-</linearGradient>
-</defs>
-</svg>
- 
- 
-      <!-- Text next to icon -->
-      <span class="ms-3 fw-semibold " style="color: #5737ED;">Recent Leave Request</span>
+      </div>
+    
+    <h5 class="card-title mb-3" style="font-weight: 700 ; color : #333;"> Annual Leave </h5>
+    <div class="d-flex justify-content-between align-items-end"></div>
+    <p class="mb-1" style="color: #666; font-size: 0.9rem;">Available days</p>
+      <!-- made two divs for the muted and left most text  -->
+    <div class="leave-count d-flex justify-content-between align-items-center">
+      <div class="leave-days fs-1 fw-bold">10</div>
+      <div class="total-days text-muted fs-6">of 20 days</div>
     </div>
- 
-    <!-- Right Side: View All -->
-    <a href="#" class="text-primary" ; >View All</a>
-  </div>
-</div>
- 
-<div class="d-flex justify-content-between align-items-center py-2 border-bottom">
-<div>
-<strong>Annual Leave</strong><br>
-<small class="text-muted">Jul 21-23, 2025<br>Request ID: 3355</small>
-</div>
- 
-  <!-- source for tick icon      -->
-<span class="status-approved text-light" style="background: linear-gradient(90deg, #0D9687 33.66%, #026358 100%);">
-<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M5.42334 7.57697L8.50026 10.6539L14.6541 4.80774" stroke="white"/>
-<path d="M13.3278 4.64242C12.3567 3.42709 10.9629 2.62273 9.42478 2.38994C7.88664 2.15715 6.31729 2.51304 5.03005 3.38657C3.7428 4.2601 2.83238 5.587 2.48054 7.10234C2.1287 8.61768 2.36133 10.21 3.13199 11.5613C3.90265 12.9127 5.15463 13.9236 6.63798 14.3924C8.12133 14.8611 9.72691 14.7532 11.1342 14.0901C12.5414 13.427 13.6468 12.2575 14.2296 10.8151C14.8124 9.37278 14.8298 7.76367 14.2782 6.30907L13.551 6.58483C14.0331 7.85635 14.0179 9.26292 13.5084 10.5237C12.999 11.7846 12.0327 12.8068 10.8026 13.3865C9.57249 13.9661 8.169 14.0605 6.87235 13.6507C5.5757 13.241 4.48129 12.3573 3.80763 11.176C3.13397 9.99475 2.93062 8.60287 3.23817 7.27825C3.54573 5.95364 4.34156 4.79375 5.46679 4.03017C6.59202 3.26658 7.96384 2.95548 9.30839 3.15897C10.6529 3.36247 11.8713 4.06558 12.7201 5.12794L13.3278 4.64242Z" fill="white"/>
-</svg> Approved</span>
- 
-</div>
- 
+    <div class="progress mt-2">
+    <div class="progress-bar bg-primary" style="width: 50%; background: linear-gradient(90deg, #6B4BF6 40.87%, #2200C4 100%)";></div>
+    </div>
+    </div>
+    </div>
+    
+          <!-- card no 2 -->
+    <div class="col-md-4">
+    <div class="card p-3" style="background-color: #F5FFFF;">
+    <div class="d-flex align-items-center justify-content-between mb-2">
+      <h5 class="card-title mb-0">Sick Leave</h5>
+      <div style="width: 39px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, #0D9687 8.17%, #03776B 88.95%); display: flex; align-items: center; justify-content: center;">
+        <svg width="20" height="20" viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.3334 4C18.6928 4 21.9146 5.33452 24.2901 7.70998C26.6656 10.0854 28.0001 13.3073 28.0001 16.6667C28.0001 20.0261 26.6656 23.2479 24.2901 25.6234C21.9146 27.9988 18.6928 29.3333 15.3334 29.3333C11.974 29.3333 8.75219 27.9988 6.37673 25.6234C4.00127 23.2479 2.66675 20.0261 2.66675 16.6667C2.66675 13.3073 4.00127 10.0854 6.37673 7.70998C8.75219 5.33452 11.974 4 15.3334 4ZM15.3334 5.33333C12.3276 5.33333 9.44495 6.52738 7.31954 8.65279C5.19413 10.7782 4.00008 13.6609 4.00008 16.6667C4.00008 19.6725 5.19413 22.5551 7.31954 24.6805C9.44495 26.806 12.3276 28 15.3334 28C16.8217 28 18.2955 27.7069 19.6705 27.1373C21.0455 26.5677 22.2949 25.7329 23.3473 24.6805C24.3997 23.6281 25.2345 22.3788 25.8041 21.0037C26.3736 19.6287 26.6667 18.155 26.6667 16.6667C26.6667 13.6609 25.4727 10.7782 23.3473 8.65279C21.2219 6.52738 18.3392 5.33333 15.3334 5.33333ZM14.6667 9.33333H16.0001V16.56L22.2668 20.1733L21.6001 21.3333L14.6667 17.3333V9.33333Z"/>
+        </svg>
+      </div>
+    </div>
+    
+    <p class="mb-1" style="color: #666; font-size: 0.9rem;">Available days</p>
+    
+    <div class="leave-count d-flex justify-content-between align-items-center">
+      <div class="leave-days fs-1 fw-bold">8</div>
+    
+      <div class="total-days text-muted fs-6">of 10 days</div>
+    </div>
+    <div class="progress mt-2">
+    <div class="progress-bar bg-teal" style="width: 80% ; background: linear-gradient(90deg, #0D9687 40.87%, #016055 100%);"></div>
+    </div>
+    </div>
+    </div>
+    
+                <div class="col-md-4">
+    <div class="card p-3" style="background-color: #FFFAF4;">
+    <div class="d-flex align-items-center justify-content-between mb-2">
+      <h5 class="card-title mb-0">Emergency Leave</h5>
+      <div style="width: 39px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, #FF8810 8.17%, #BC5F01 88.95%); display: flex; align-items: center; justify-content: center;">
+        <svg width="20" height="20" viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.6668 17.3334H8.00009C7.62231 17.3334 7.30586 17.2054 7.05075 16.9494C6.79564 16.6934 6.66764 16.3769 6.66675 16C6.66586 15.6231 6.79386 15.3067 7.05075 15.0507C7.30764 14.7947 7.62409 14.6667 8.00009 14.6667H14.6668V8.00003C14.6668 7.62225 14.7948 7.3058 15.0508 7.05069C15.3068 6.79558 15.6232 6.66758 16.0001 6.66669C16.377 6.6658 16.6939 6.7938 16.9508 7.05069C17.2076 7.30758 17.3352 7.62402 17.3334 8.00003V14.6667H24.0001C24.3779 14.6667 24.6948 14.7947 24.9508 15.0507C25.2068 15.3067 25.3343 15.6231 25.3334 16C25.3325 16.3769 25.2045 16.6938 24.9494 16.9507C24.6943 17.2076 24.3779 17.3351 24.0001 17.3334H17.3334V24C17.3334 24.3778 17.2054 24.6947 16.9494 24.9507C16.6934 25.2067 16.377 25.3342 16.0001 25.3334C15.6232 25.3325 15.3068 25.2045 15.0508 24.9494C14.7948 24.6942 14.6668 24.3778 14.6668 24V17.3334Z" fill="white"/>
+        </svg>
+      </div>
+    </div>
+    
+    <p class="mb-1" style="color: #666; font-size: 0.9rem;">Available days</p>
+    
+    
+    <div class="leave-count d-flex justify-content-between align-items-center">
+      <div class="leave-days fs-1 fw-bold">3</div>
+      <div class="total-days text-muted fs-6">of 5 days</div>
+    </div>
+    <div class="progress mt-2">
+    <div class="progress-bar " style="width: 60%;background: linear-gradient(90deg, #FF8810 40.87%, #BE6001 100%);
+    
+      "></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+            <!-- Leave Button -->
+    <div class="mt-4">
+    <button class="btn btn-primary apply-btn">Apply for Leave</button>
+    </div>
+    
+            <!-- Recent Leave Requests -->
+    <div class="recent-card mt-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="d-flex align-items-center">
+          <!-- SVG Icon -->
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="32" height="32" rx="5" fill="url(#paint0_linear_42_172)"/>
+    <path d="M20.1875 20.1875V24.875H7.6875V6.125H15.5V4.5625H7.6875C7.2731 4.5625 6.87567 4.72712 6.58265 5.02015C6.28962 5.31317 6.125 5.7106 6.125 6.125V24.875C6.125 25.2894 6.28962 25.6868 6.58265 25.9799C6.87567 26.2729 7.2731 26.4375 7.6875 26.4375H20.1875C20.6019 26.4375 20.9993 26.2729 21.2924 25.9799C21.5854 25.6868 21.75 25.2894 21.75 24.875V20.1875H20.1875Z" fill="white"/>
+    <path d="M26.0781 7.50002L23.5 4.9219C23.2663 4.69286 22.9522 4.56458 22.625 4.56458C22.2978 4.56458 21.9837 4.69286 21.75 4.9219L10.8125 15.8594V20.1875H15.1328L26.0703 9.25002C26.2993 9.01636 26.4276 8.70221 26.4276 8.37502C26.4276 8.04783 26.2993 7.73368 26.0703 7.50002H26.0781ZM14.4844 18.625H12.375V16.5156L19.75 9.13283L21.8672 11.25L14.4844 18.625ZM22.9688 10.1485L20.8516 8.03127L22.625 6.25783L24.7422 8.37502L22.9688 10.1485Z" fill="white"/>
+    <defs>
+    <linearGradient id="paint0_linear_42_172" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#6B4BF6"/>
+    <stop offset="1" stop-color="#2B09CA"/>
+    </linearGradient>
+    </defs>
+    </svg>
+    
+    
+          <!-- Text next to icon -->
+          <span class="ms-3 fw-semibold " style="color: #5737ED;">Recent Leave Request</span>
+        </div>
+    
+        <!-- Right Side: View All -->
+        <a href="#" class="text-primary" ; >View All</a>
+      </div>
+    </div>
+    
     <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
-<div>
-<strong>Sick Leave</strong><br>
-<small class="text-">Jul 24-25, 2025<br>Request ID: 3355</small>
-</div>
-<span class="status-pending text-light" style="background: linear-gradient(90deg, #FF8810 0%, #C76504 100%);">
-    <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M7 13.5C10.3137 13.5 13 10.8137 13 7.5C13 4.18629 10.3137 1.5 7 1.5C3.68629 1.5 1 4.18629 1 7.5C1 10.8137 3.68629 13.5 7 13.5Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M6.33325 4.83337V8.16671H9.66659" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-     Pending</span>
-</div>
- 
- <div class="d-flex justify-content-between align-items-center py-2">
-<div>
-<strong>Annual Leave</strong><br>
-<small class="text-muted">Jul 21-23, 2025<br>Request ID: 3355</small>
-</div>
-<span class="status-approved text-light" style="background: linear-gradient(90deg, #0D9687 33.66%, #026358 100%);">
-<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
- 
-<path d="M5.42334 7.57697L8.50026 10.6539L14.6541 4.80774" stroke="white"/>
-<path d="M13.3278 4.64242C12.3567 3.42709 10.9629 2.62273 9.42478 2.38994C7.88664 2.15715 6.31729 2.51304 5.03005 3.38657C3.7428 4.2601 2.83238 5.587 2.48054 7.10234C2.1287 8.61768 2.36133 10.21 3.13199 11.5613C3.90265 12.9127 5.15463 13.9236 6.63798 14.3924C8.12133 14.8611 9.72691 14.7532 11.1342 14.0901C12.5414 13.427 13.6468 12.2575 14.2296 10.8151C14.8124 9.37278 14.8298 7.76367 14.2782 6.30907L13.551 6.58483C14.0331 7.85635 14.0179 9.26292 13.5084 10.5237C12.999 11.7846 12.0327 12.8068 10.8026 13.3865C9.57249 13.9661 8.169 14.0605 6.87235 13.6507C5.5757 13.241 4.48129 12.3573 3.80763 11.176C3.13397 9.99475 2.93062 8.60287 3.23817 7.27825C3.54573 5.95364 4.34156 4.79375 5.46679 4.03017C6.59202 3.26658 7.96384 2.95548 9.30839 3.15897C10.6529 3.36247 11.8713 4.06558 12.7201 5.12794L13.3278 4.64242Z" fill="white"/>
-</svg> Approved</span>
-   
- 
-</div>
-</div>
-</div>
-</div>
- 
-    <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-</body>
- 
-</html>
+    <div>
+    <strong>Annual Leave</strong><br>
+    <small class="text-muted">Jul 21-23, 2025<br>Request ID: 3355</small>
+    </div>
+    
+      <!-- source for tick icon      -->
+    <span class="status-approved text-light" style="background: linear-gradient(90deg, #0D9687 33.66%, #026358 100%);">
+    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5.42334 7.57697L8.50026 10.6539L14.6541 4.80774" stroke="white"/>
+    <path d="M13.3278 4.64242C12.3567 3.42709 10.9629 2.62273 9.42478 2.38994C7.88664 2.15715 6.31729 2.51304 5.03005 3.38657C3.7428 4.2601 2.83238 5.587 2.48054 7.10234C2.1287 8.61768 2.36133 10.21 3.13199 11.5613C3.90265 12.9127 5.15463 13.9236 6.63798 14.3924C8.12133 14.8611 9.72691 14.7532 11.1342 14.0901C12.5414 13.427 13.6468 12.2575 14.2296 10.8151C14.8124 9.37278 14.8298 7.76367 14.2782 6.30907L13.551 6.58483C14.0331 7.85635 14.0179 9.26292 13.5084 10.5237C12.999 11.7846 12.0327 12.8068 10.8026 13.3865C9.57249 13.9661 8.169 14.0605 6.87235 13.6507C5.5757 13.241 4.48129 12.3573 3.80763 11.176C3.13397 9.99475 2.93062 8.60287 3.23817 7.27825C3.54573 5.95364 4.34156 4.79375 5.46679 4.03017C6.59202 3.26658 7.96384 2.95548 9.30839 3.15897C10.6529 3.36247 11.8713 4.06558 12.7201 5.12794L13.3278 4.64242Z" fill="white"/>
+    </svg> Approved</span>
+    
+    </div>
+    
+        <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+    <div>
+    <strong>Sick Leave</strong><br>
+    <small class="text-">Jul 24-25, 2025<br>Request ID: 3355</small>
+    </div>
+    <span class="status-pending text-light" style="background: linear-gradient(90deg, #FF8810 0%, #C76504 100%);">
+        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7 13.5C10.3137 13.5 13 10.8137 13 7.5C13 4.18629 10.3137 1.5 7 1.5C3.68629 1.5 1 4.18629 1 7.5C1 10.8137 3.68629 13.5 7 13.5Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M6.33325 4.83337V8.16671H9.66659" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+        Pending</span>
+    </div>
+    
+    <div class="d-flex justify-content-between align-items-center py-2">
+    <div>
+    <strong>Annual Leave</strong><br>
+    <small class="text-muted">Jul 21-23, 2025<br>Request ID: 3355</small>
+    </div>
+    <span class="status-approved text-light" style="background: linear-gradient(90deg, #0D9687 33.66%, #026358 100%);">
+    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+    
+    <path d="M5.42334 7.57697L8.50026 10.6539L14.6541 4.80774" stroke="white"/>
+    <path d="M13.3278 4.64242C12.3567 3.42709 10.9629 2.62273 9.42478 2.38994C7.88664 2.15715 6.31729 2.51304 5.03005 3.38657C3.7428 4.2601 2.83238 5.587 2.48054 7.10234C2.1287 8.61768 2.36133 10.21 3.13199 11.5613C3.90265 12.9127 5.15463 13.9236 6.63798 14.3924C8.12133 14.8611 9.72691 14.7532 11.1342 14.0901C12.5414 13.427 13.6468 12.2575 14.2296 10.8151C14.8124 9.37278 14.8298 7.76367 14.2782 6.30907L13.551 6.58483C14.0331 7.85635 14.0179 9.26292 13.5084 10.5237C12.999 11.7846 12.0327 12.8068 10.8026 13.3865C9.57249 13.9661 8.169 14.0605 6.87235 13.6507C5.5757 13.241 4.48129 12.3573 3.80763 11.176C3.13397 9.99475 2.93062 8.60287 3.23817 7.27825C3.54573 5.95364 4.34156 4.79375 5.46679 4.03017C6.59202 3.26658 7.96384 2.95548 9.30839 3.15897C10.6529 3.36247 11.8713 4.06558 12.7201 5.12794L13.3278 4.64242Z" fill="white"/>
+    </svg> Approved</span>
+      
+    
+    </div>
+    </div>
+    </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    
+    </html>

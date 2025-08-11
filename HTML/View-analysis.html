@@ -6,448 +6,8 @@
     <title>Analytics Dashboard</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/view-analysis.css">
     
-
-    <style>
-        body {
-            background: linear-gradient(296.82deg, #ECFFF9 0%, #EDFEFD 100%);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-        
-        .navbar {
-            background: white !important;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .navbar-brand {
-            font-weight: 600;
-            color: #333 !important;
-        }
-        
-       .analytics-header {
-    color: #0D9687;
-    display: inline-block;
-    padding: 10px 16px;
-    border-radius: 4px;
-  }
-        
-        .main-content {
-            padding: 30px 20px;
-        }
-        
-        .stat-card {
-            background: white;
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border: none;
-            height: 100%;
-        }
-        
-        .stat-number {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        
-        .stat-label {
-            color: #6c757d;
-            font-size: 14px;
-            margin: 0;
-        }
-        
-        .stat-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 18px;
-        }
-        
-        .purple-bg { background: #8b5cf6; }
-        .teal-bg { background: #14b8a6; }
-        .orange-bg { background: #f59e0b; }
-        .pink-bg { background: #ec4899; }
-        
-        .chart-card {
-            background: white;
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 24px;
-        }
-        
-        .chart-title {
-            font-weight: 600;
-            font-size: 16px;
-            margin-bottom: 20px;
-            color: #1f2937;
-        }
-        
-        .chart-icon {
-            width: 24px;
-            height: 24px;
-            border-radius: 6px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 12px;
-            margin-right: 8px;
-        }
-        
-        .progress-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        
-        .progress-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .progress-label {
-            font-weight: 500;
-            color: #374151;
-            margin-bottom: 8px;
-        }
-        
-        .progress-value {
-            color: #6b7280;
-            font-size: 14px;
-        }
-        
-        .progress-bar-custom {
-            height: 8px;
-            border-radius: 4px;
-            background-color: #f3f4f6;
-            overflow: hidden;
-            width: 100%;
-            max-width: 300px;
-        }
-        
-        @media (max-width: 768px) {
-            .progress-bar-custom {
-                width: 100%;
-                max-width: 200px;
-            }
-            
-            .progress-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .progress-value {
-                margin-top: 8px;
-            }
-            
-            .stat-card {
-                padding: 20px;
-            }
-            
-            .stat-number {
-                font-size: 28px;
-            }
-            
-            .main-content {
-                padding: 20px 15px;
-            }
-        }
-        
-        .progress-fill {
-            height: 100%;
-            border-radius: 4px;
-        }
-        
-        .purple-bar { background: #8b5cf6; }
-        .blue-bar { background: #3b82f6; }
-        .teal-bar { background: #14b8a6; }
-        .yellow-bar { background: #f59e0b; }
-        .orange-bar { background: #f97316; }
-        
-        .monthly-bar {
-            background-color: #f3f4f6;
-            height: 12px;
-            border-radius: 6px;
-            margin: 8px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .monthly-fill {
-            height: 100%;
-            border-radius: 6px;
-            background: #f97316;
-        }
-        
-        .monthly-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 16px;
-        }
-        
-        .monthly-label {
-            font-weight: 500;
-            color: #374151;
-            min-width: 30px;
-        }
-        
-        .monthly-value {
-            color: #6b7280;
-            font-size: 14px;
-        }
-
-   /* leave usage box css  */
-
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding: 20px;
-        }
-        .dashboard-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-            padding: 25px;
-            margin-bottom: 30px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-    
-
-
-  .card-title{
-        background: #fff;
-        border-radius: 10px;
-        padding: 30px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-        .department-container {
-            margin-bottom: 20px;
-        }
-        .department-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-        .department-name {
-            font-weight: 600;
-            color: #2c3e50;
-            font-size: 1.1rem;
-        }
-       .leave-usage-card {
-    width: 100%;
-    background: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    font-family: Arial, sans-serif;
-  }
- .leave-usage-card {
-    width: 100%;
-    background: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    font-family: Arial, sans-serif;
-  }
-  
-  .card-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-    margin: 0 0 20px 0;
-  }
-  
-  .department-row {
-    margin-bottom: 15px;
-  }
-  
-  .department-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-  }
-  
-  .department-name {
-    font-weight: 500;
-    color: #444;
-  }
-  
-  .department-stats {
-    color: #666;
-  }
-  
-  .progress-bar-container {
-    height: 8px;
-    background-color: #f0f0f0;
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  
-  .progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #6759F3, #732CFB);
-    border-radius: 4px;
-  }
-  
-        .header {
-            display: flex;
-        
-    align-items: center;
-            margin-bottom: 30px;
-            max-width: 800px;
-            margin: 20px auto 30px;
-        }
-        .page-title {
-            color: #2c3e50;
-            font-weight: 700;
-            margin: 0;
-        }
-        .date-filter {
-            background-color: white;
-            border-radius: 5px;
-            padding: 8px 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-        }
-   
-           /* TOP LEAVE TAKERS  */
-            .chart-card {
-        background: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    .chart-title {
-        font-size: 18px;
-        font-weight: 500;
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-    }
-    
-    .chart-icon {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 10px;
-        color: white;
-    }
-    
-    .teal-bg {
-        background-color: #20c997;
-    }
-    
-    .employee-container {
-        margin-bottom: 15px;
-    }
-    
-    .employee-header {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 5px;
-    }
-    
-    .employee-name {
-        font-weight: 600;
-        font-size: 14px;
-    }
-    
-    .employee-department {
-        font-size: 12px;
-        color: #6c757d;
-    }
-    
-    .leave-days {
-        font-weight: 600;
-        font-size: 14px;
-        text-align: right;
-    }
-    
-    .leave-period {
-        font-size: 12px;
-        color: #6c757d;
-        text-align: right;
-    }
-    
-    .progress {
-        height: 6px;
-        background-color: #e9ecef;
-        border-radius: 3px;
-    }
-    
-    .progress-bar-primary {
-        background-color: #4e73df;
-    }
-    .leave-take {
-        color : #E7326B;
-         font-weight: 700; 
-        padding: -1px 11px;
-        border-radius: 4px;
-        display: inline-block; 
-        margin: 0 0 2px 0; 
-        text-transform: uppercase; 
-    }
-
-
-
-    .top-take {
-        color : #EF770C;
-;
-         font-weight: 700; 
-        padding: -1px 11px;
-        border-radius: 4px;
-        display: inline-block; 
-        margin: 0 0 2px 0; 
-        text-transform: uppercase; 
-    }
-
-.leave-type{
-        color : #0EA285;
-         font-weight: 700; 
-        padding: -1px 11px;
-        border-radius: 4px;
-        display: inline-block; 
-        margin: 0 0 2px 0; 
-        text-transform: uppercase; 
-    }
-
-
-.title-leave{
-        color : #6855F3;
-
-         font-weight: 700; 
-        padding: -1px 11px;
-        border-radius: 4px;
-        display: inline-block; 
-        margin: 0 0 2px 0; 
-        text-transform: uppercase; 
-    }
-
-
-
-
-
-
-
-
-    .dashboard-card {
-        background: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    </style>
 </head>
 <body>
     
@@ -460,498 +20,417 @@
                 <a class="navbar-brand mb-0" href="#"> </a>
 
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="32" height="32" rx="10" fill="url(#paint0_linear_164_2550)"/>
-<path d="M9.6807 8.64111H8.62744V22.3335C8.62744 22.6129 8.73841 22.8808 8.93593 23.0783C9.13346 23.2758 9.40136 23.3868 9.6807 23.3868H23.3731V22.3335H9.6807V8.64111Z" fill="white"/>
-<path d="M23.373 12.3276H19.6866V13.3809H21.5772L17.5801 17.378L15.3208 15.1135C15.2719 15.0642 15.2136 15.025 15.1495 14.9982C15.0853 14.9715 15.0165 14.9577 14.9469 14.9577C14.8774 14.9577 14.8086 14.9715 14.7444 14.9982C14.6802 15.025 14.622 15.0642 14.573 15.1135L10.7339 18.9579L11.4764 19.7005L14.9469 16.23L17.2062 18.4945C17.2551 18.5439 17.3134 18.583 17.3776 18.6098C17.4417 18.6365 17.5106 18.6503 17.5801 18.6503C17.6496 18.6503 17.7184 18.6365 17.7826 18.6098C17.8468 18.583 17.905 18.5439 17.954 18.4945L22.3198 14.1234V16.0141H23.373V12.3276Z" fill="white"/>
-<defs>
-<linearGradient id="paint0_linear_164_2550" x1="28" y1="30" x2="3.2" y2="1.2" gradientUnits="userSpaceOnUse">
-<stop stop-color="#0D9A86"/>
-<stop offset="1" stop-color="#10B482"/>
-</linearGradient>
-</defs>
-</svg>
+                <rect width="32" height="32" rx="10" fill="url(#paint0_linear_164_2550)"/>
+                <path d="M9.6807 8.64111H8.62744V22.3335C8.62744 22.6129 8.73841 22.8808 8.93593 23.0783C9.13346 23.2758 9.40136 23.3868 9.6807 23.3868H23.3731V22.3335H9.6807V8.64111Z" fill="white"/>
+                <path d="M23.373 12.3276H19.6866V13.3809H21.5772L17.5801 17.378L15.3208 15.1135C15.2719 15.0642 15.2136 15.025 15.1495 14.9982C15.0853 14.9715 15.0165 14.9577 14.9469 14.9577C14.8774 14.9577 14.8086 14.9715 14.7444 14.9982C14.6802 15.025 14.622 15.0642 14.573 15.1135L10.7339 18.9579L11.4764 19.7005L14.9469 16.23L17.2062 18.4945C17.2551 18.5439 17.3134 18.583 17.3776 18.6098C17.4417 18.6365 17.5106 18.6503 17.5801 18.6503C17.6496 18.6503 17.7184 18.6365 17.7826 18.6098C17.8468 18.583 17.905 18.5439 17.954 18.4945L22.3198 14.1234V16.0141H23.373V12.3276Z" fill="white"/>
+                <defs>
+                <linearGradient id="paint0_linear_164_2550" x1="28" y1="30" x2="3.2" y2="1.2" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0D9A86"/>
+                <stop offset="1" stop-color="#10B482"/>
+                </linearGradient>
+                </defs>
+                </svg>
                 <h3 class="analytics-header">Analytics</h3>
             </div>
         </div>
     </nav>
-<div class="row g-3">
 
-  <!-- 1. Total Leave Days Used -->
-  <div class="col-lg-3 col-md-6">
-    <div class="p-3 rounded-4 shadow-sm bg-white d-flex justify-content-between align-items-start h-100">
-      <div>
-        <p class="text-muted mb-1 fw-semibold">Total Leave Days Used</p>
-        <h3 class="text-dark fw-bold mb-1">150</h3>
-        <p class="text-secondary mb-0">+12% from last month</p>
-      </div>
-      <div class="d-flex align-items-center justify-content-center rounded-3"
-        style="width: 48px; height: 48px; background: linear-gradient(135deg, #6759F3, #7524FC);">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 
-          2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 
-          16H5V10h14v10zm0-12H5V6h14v2z" />
-        </svg>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2. Average Leaves Per Employee -->
-  <div class="col-lg-3 col-md-6">
-    <div class="p-3 rounded-4 shadow-sm bg-white d-flex justify-content-between align-items-start h-100">
-      <div>
-        <p class="text-muted mb-1 fw-semibold">Average Leaves<br>Per Employee</p>
-        <h3 class="text-dark fw-bold mb-1">15</h3>
-        <p class="text-secondary mb-0">This month</p>
-      </div>
-      <div class="d-flex align-items-center justify-content-center rounded-3"
-        style="width: 48px; height: 48px; background: linear-gradient(135deg, #1cc7d0, #0b9ba2);">
-        <i class="fas fa-users text-white fs-5"></i>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3. Pending Requests -->
-  <div class="col-lg-3 col-md-6">
-    <div class="p-3 rounded-4 shadow-sm bg-white d-flex justify-content-between align-items-start h-100">
-      <div>
-        <p class="text-muted mb-1 fw-semibold">Pending<br>Requests</p>
-        <h3 class="text-dark fw-bold mb-1">5</h3>
-        <p class="text-secondary mb-0">As of now</p>
-      </div>
-      <div class="d-flex align-items-center justify-content-center rounded-3"
-        style="width: 48px; height: 48px; background: linear-gradient(135deg, #ff8c00, #ff6b00);">
-        <i class="fas fa-clock text-white fs-5"></i>
-      </div>
-    </div>
-  </div>
-
-  <!-- 4. Approval Rate -->
-  <div class="col-lg-3 col-md-6">
-    <div class="p-3 rounded-4 shadow-sm bg-white d-flex justify-content-between align-items-start h-100">
-      <div>
-        <p class="text-muted mb-1 fw-semibold">Approval<br>Rate</p>
-        <h3 class="text-dark fw-bold mb-1">90%</h3>
-        <p class="text-secondary mb-0">This quarter</p>
-      </div>
-      <div class="d-flex align-items-center justify-content-center rounded-3"
-        style="width: 48px; height: 48px; background: linear-gradient(135deg, #f857a6, #ff5858);">
-        <i class="fas fa-check-circle text-white fs-5"></i>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-        <!-- leave useage by department box  -->
-   
-<div class="leave-usage-card">
-  <svg width="94" height="94" viewBox="0 0 94 94" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d_164_3152)">
-<rect x="19" y="19" width="56" height="56" rx="10" fill="url(#paint0_linear_164_3152)"/>
-</g>
-<path d="M31.4165 58.3333V56.9167C31.4165 54.2866 32.4613 51.7643 34.321 49.9045C36.1808 48.0448 38.7031 47 41.3332 47C43.9632 47 46.4856 48.0448 48.3453 49.9045C50.205 51.7643 51.2498 54.2866 51.2498 56.9167V58.3333" stroke="white" stroke-width="2" stroke-linecap="round"/>
-<path d="M48.4165 49.8333C48.4165 47.9547 49.1628 46.153 50.4912 44.8247C51.8195 43.4963 53.6212 42.75 55.4998 42.75C56.43 42.75 57.3511 42.9332 58.2105 43.2892C59.0699 43.6452 59.8508 44.1669 60.5085 44.8247C61.1663 45.4824 61.688 46.2633 62.044 47.1227C62.4 47.982 62.5832 48.9031 62.5832 49.8333V50.5417" stroke="white" stroke-width="2" stroke-linecap="round"/>
-<path d="M41.3332 47C42.8361 47 44.2774 46.403 45.3401 45.3403C46.4028 44.2776 46.9998 42.8362 46.9998 41.3333C46.9998 39.8304 46.4028 38.3891 45.3401 37.3264C44.2774 36.2637 42.8361 35.6667 41.3332 35.6667C39.8303 35.6667 38.3889 36.2637 37.3262 37.3264C36.2635 38.3891 35.6665 39.8304 35.6665 41.3333C35.6665 42.8362 36.2635 44.2776 37.3262 45.3403C38.3889 46.403 39.8303 47 41.3332 47ZM55.4998 42.75C56.627 42.75 57.708 42.3022 58.505 41.5052C59.3021 40.7082 59.7498 39.6272 59.7498 38.5C59.7498 37.3728 59.3021 36.2918 58.505 35.4948C57.708 34.6978 56.627 34.25 55.4998 34.25C54.3727 34.25 53.2917 34.6978 52.4946 35.4948C51.6976 36.2918 51.2498 37.3728 51.2498 38.5C51.2498 39.6272 51.6976 40.7082 52.4946 41.5052C53.2917 42.3022 54.3727 42.75 55.4998 42.75Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<defs>
-<filter id="filter0_d_164_3152" x="0" y="0" width="94" height="94" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset/>
-<feGaussianBlur stdDeviation="9.5"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_164_3152"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_164_3152" result="shape"/>
-</filter>
-<linearGradient id="paint0_linear_164_3152" x1="19" y1="19" x2="75" y2="75" gradientUnits="userSpaceOnUse">
-<stop offset="0.212209" stop-color="#6759F3"/>
-<stop offset="1" stop-color="#7524FC"/>
-</linearGradient>
-</defs>
-</svg>
-
-  <h5 class="title-leave">Leave Usage by Department</h5>
-  
-  <div class="department-row">
-    <div class="department-info">
-      <span class="department-name">Engineering</span>
-      <span class="department-stats">45/60 days (75%)</span>
-    </div>
-    <div class="progress-bar-container">
-      <div class="progress-fill" style="width: 75%"></div>
-    </div>
-  </div>
-  
-  <div class="department-row">
-    <div class="department-info">
-      <span class="department-name">Marketing</span>
-      <span class="department-stats">32/40 days (80%)</span>
-    </div>
-    <div class="progress-bar-container">
-      <div class="progress-fill" style="width: 80%"></div>
-    </div>
-  </div>
-  
-  <div class="department-row">
-    <div class="department-info">
-      <span class="department-name">HR</span>
-      <span class="department-stats">28/40 days (60%)</span>
-    </div>
-    <div class="progress-bar-container">
-      <div class="progress-fill" style="width: 60%"></div>
-    </div>
-  </div>
-  
-  <div class="department-row">
-    <div class="department-info">
-      <span class="department-name">Finance</span>
-      <span class="department-stats">15/30 days (50%)</span>
-    </div>
-    <div class="progress-bar-container">
-      <div class="progress-fill" style="width: 50%"></div>
-    </div>
-  </div>
-</div>
-             <!-- loans type Distribution -->
-
-            <div class="col-12 mb-4">
-                <div class="chart-card">
-                    <div class="chart-title">
-                       <svg width="94" height="94" viewBox="0 0 94 94" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d_164_3186)">
-<rect x="19" y="19" width="56" height="56" rx="10" fill="url(#paint0_linear_164_3186)"/>
-</g>
-<path d="M43.9814 35.186C41.9044 35.7178 40.0044 36.7879 38.473 38.2885C36.9416 39.7891 35.8331 41.667 35.2592 43.7327C34.6854 45.7985 34.6665 47.9791 35.2045 50.0545C35.7425 52.13 36.8183 54.0268 38.3235 55.5536C39.8286 57.0805 41.7098 58.1834 43.7773 58.751C45.8448 59.3187 48.0255 59.3311 50.0992 58.7868C52.173 58.2426 54.0666 57.1611 55.589 55.6514C57.1113 54.1416 58.2085 52.2571 58.77 50.1879" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M59.1905 47C59.1905 43.7669 57.9061 40.6662 55.62 38.3801C53.3338 36.0939 50.2331 34.8096 47 34.8096V47H59.1905Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<defs>
-<filter id="filter0_d_164_3186" x="0" y="0" width="94" height="94" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset/>
-<feGaussianBlur stdDeviation="9.5"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_164_3186"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_164_3186" result="shape"/>
-</filter>
-<linearGradient id="paint0_linear_164_3186" x1="19" y1="19" x2="75" y2="75" gradientUnits="userSpaceOnUse">
-<stop offset="0.212209" stop-color="#10B382"/>
-<stop offset="1" stop-color="#0D9788"/>
-</linearGradient>
-</defs>
-</svg>
-
-                         <h5 class = "leave-type"  >Leave Types Distribution </h5>
+    <div class="main-content">
+        <div class="container-fluid">
+            
+            <!-- Stats Cards Row -->
+            <div class="row g-4 mb-4">
+                <!-- 1. Total Leave Days Used -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="p-3 rounded-4 shadow-sm bg-white d-flex justify-content-between align-items-start h-100">
+                        <div>
+                            <p class="text-muted mb-1 fw-semibold">Total Leave Days Used</p>
+                            <h3 class="text-dark fw-bold mb-1">150</h3>
+                            <p class="text-secondary mb-0">+12% from last month</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center rounded-3"
+                            style="width: 48px; height: 48px; background: linear-gradient(135deg, #6759F3, #7524FC);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z" />
+                            </svg>
+                        </div>
                     </div>
-                    
-                    <!-- ANNUAL LEAVE-->
-            <div class="department-container">
-                <div class="department-header">
-                    <div class="department-name">Annual Leave</div>
-                    <div class="usage-stats">89 Requests (57%)</div>
                 </div>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-finance" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+
+                <!-- 2. Average Leaves Per Employee -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="p-3 rounded-4 shadow-sm bg-white d-flex justify-content-between align-items-start h-100">
+                        <div>
+                            <p class="text-muted mb-1 fw-semibold">Average Leaves<br>Per Employee</p>
+                            <h3 class="text-dark fw-bold mb-1">15</h3>
+                            <p class="text-secondary mb-0">This month</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center rounded-3"
+                            style="width: 48px; height: 48px; background: linear-gradient(135deg, #1cc7d0, #0b9ba2);">
+                            <i class="fas fa-users text-white fs-5"></i>
+                        </div>
+                    </div>
                 </div>
-            </div>
-                    
-                  <!-- sick  leave -->
-                 <div class="department-container">
-                <div class="department-header">
-                    <div class="department-name">Sick leave </div>
-                    <div class="usage-stats">42 Requests (27%)</div>
+
+                <!-- 3. Pending Requests -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="p-3 rounded-4 shadow-sm bg-white d-flex justify-content-between align-items-start h-100">
+                        <div>
+                            <p class="text-muted mb-1 fw-semibold">Pending<br>Requests</p>
+                            <h3 class="text-dark fw-bold mb-1">5</h3>
+                            <p class="text-secondary mb-0">As of now</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center rounded-3"
+                            style="width: 48px; height: 48px; background: linear-gradient(135deg, #ff8c00, #ff6b00);">
+                            <i class="fas fa-clock text-white fs-5"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="progress">
-                    <div class="progress-fill yellow-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-            </div>
-                     <!-- emergency leave -->
-                    <div class="department-container">
-                        <div class="department-header">
-                            <div class="department-name">Emergency Leave</div>
-                           <div class="usage-stats">42 Requests (27%)</div>
-                         </div>
-                              <div class="progress">
-                    <div class="progress-fill yellow-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                  </div>
-                </div>
-            </div>
-        </div>
 
-      <!-- Monthly leave trend  -->
-
-        <div class="row">
-            <div class="col-12">
-                <div class="chart-card">
-                    <div class="chart-title">
-                        <!-- icon image code  -->
-                           
-                   <svg width="94" height="94" viewBox="0 0 94 94" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d_164_3230)">
-<rect x="19" y="19" width="56" height="56" rx="10" fill="url(#paint0_linear_164_3230)"/>
-</g>
-<path d="M57.4375 33.375H35.5625C34.9823 33.375 34.4259 33.6055 34.0157 34.0157C33.6055 34.4259 33.375 34.9823 33.375 35.5625V57.4375C33.375 58.0177 33.6055 58.5741 34.0157 58.9843C34.4259 59.3945 34.9823 59.625 35.5625 59.625H57.4375C58.0177 59.625 58.5741 59.3945 58.9843 58.9843C59.3945 58.5741 59.625 58.0177 59.625 57.4375V35.5625C59.625 34.9823 59.3945 34.4259 58.9843 34.0157C58.5741 33.6055 58.0177 33.375 57.4375 33.375Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
-<path d="M38.7998 50.7547L42.9247 46.6298L46.1243 49.8214L53.7915 42.125" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M47.9585 42.125H53.7918V47.9583" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<defs>
-<filter id="filter0_d_164_3230" x="0" y="0" width="94" height="94" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset/>
-<feGaussianBlur stdDeviation="9.5"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_164_3230"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_164_3230" result="shape"/>
-</filter>
-<linearGradient id="paint0_linear_164_3230" x1="19" y1="19" x2="75" y2="75" gradientUnits="userSpaceOnUse">
-<stop offset="0.212209" stop-color="#F3970B"/>
-<stop offset="1" stop-color="#EB600C"/>
-</linearGradient>
-</defs>
-</svg>
-
-</span> <h5 class = "top-take"  >Monthly Leave Trend </h5>
-                    </div>
-                    
-                    <div class="monthly-item " style="color: #EF770C;">
-                        <div class="monthly-label">JAN</div>
-                        <div style="flex-grow: 1; margin: 0 20px;">
-                            <div class="monthly-bar">
-                                <div class="monthly-fill" style="width: 45% ; "></div>
-                            </div>
+                <!-- 4. Approval Rate -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="p-3 rounded-4 shadow-sm bg-white d-flex justify-content-between align-items-start h-100">
+                        <div>
+                            <p class="text-muted mb-1 fw-semibold">Approval<br>Rate</p>
+                            <h3 class="text-dark fw-bold mb-1">90%</h3>
+                            <p class="text-secondary mb-0">This quarter</p>
                         </div>
-                        <div class="monthly-value">40</div>
-                    </div>
-                    
-                    <div class="monthly-item">
-                        <div class="monthly-label">FEB</div>
-                        <div style="flex-grow: 1; margin: 0 20px;">
-                            <div class="monthly-bar">
-                                <div class="monthly-fill" style="width: 95%;"></div>
-                            </div>
+                        <div class="d-flex align-items-center justify-content-center rounded-3"
+                            style="width: 48px; height: 48px; background: linear-gradient(135deg, #f857a6, #ff5858);">
+                            <i class="fas fa-check-circle text-white fs-5"></i>
                         </div>
-                        <div class="monthly-value">100</div>
-                    </div>
-                    
-                    <div class="monthly-item">
-                        <div class="monthly-label">MAR</div>
-                        <div style="flex-grow: 1; margin: 0 20px;">
-                            <div class="monthly-bar">
-                                <div class="monthly-fill" style="width: 75%;"></div>
-                            </div>
-                        </div>
-                        <div class="monthly-value">89</div>
-                    </div>
-                       
-              <div class="monthly-item">
-                        <div class="monthly-label">APR</div>
-                        <div style="flex-grow: 1; margin: 0 20px;">
-                            <div class="monthly-bar">
-                                <div class="monthly-fill" style="width: 75%;"></div>
-                            </div>
-                        </div>
-                        <div class="monthly-value">50</div>
-                    </div>
-           
-
-          <div class="monthly-item">
-                        <div class="monthly-label">MAY</div>
-                        <div style="flex-grow: 1; margin: 0 20px;">
-                            <div class="monthly-bar">
-                                <div class="monthly-fill" style="width: 75%;"></div>
-                            </div>
-                        </div>
-                        <div class="monthly-value">46</div>
-                    </div>
-
-
-              <div class="monthly-item">
-                        <div class="monthly-label">JUNE</div>
-                        <div style="flex-grow: 1; margin: 0 20px;">
-                            <div class="monthly-bar">
-                                <div class="monthly-fill" style="width: 75%;"></div>
-                            </div>
-                        </div>
-                        <div class="monthly-value">30</div>
-                    </div>
-
-                  <div class="monthly-item">
-                        <div class="monthly-label">JULY</div>
-                        <div style="flex-grow: 1; margin: 0 20px;">
-                            <div class="monthly-bar">
-                                <div class="monthly-fill" style="width: 90%;"></div>
-                            </div>
-                        </div>
-                        <div class="monthly-value">100</div>
-                    </div>
-
-
-                     <div class="monthly-item">
-                        <div class="monthly-label">AUG</div>
-                        <div style="flex-grow: 1; margin: 0 20px;">
-                            <div class="monthly-bar">
-                                <div class="monthly-fill" style="width: 60%;"></div>
-                            </div>
-                        </div>
-                        <div class="monthly-value">60</div>
-                    </div>
-
-                     <div class="monthly-item">
-                        <div class="monthly-label">SEP</div>
-                        <div style="flex-grow: 1; margin: 0 20px;">
-                            <div class="monthly-bar">
-                                <div class="monthly-fill" style="width: 20%;"></div>
-                            </div>
-                        </div>
-                        <div class="monthly-value">10</div>
-                    </div>
-
-                     <div class="monthly-item">
-                        <div class="monthly-label">OCT</div>
-                        <div style="flex-grow: 1; margin: 0 20px;">
-                            <div class="monthly-bar">
-                                <div class="monthly-fill" style="width: 50%;"></div>
-                            </div>
-                        </div>
-                        <div class="monthly-value">55</div>
-                    </div>
-                   
-                  <div class="monthly-item">
-                        <div class="monthly-label">NOV</div>
-                        <div style="flex-grow: 1; margin: 0 20px;">
-                            <div class="monthly-bar">
-                                <div class="monthly-fill" style="width: 40%;"></div>
-                            </div>
-                        </div>
-                        <div class="monthly-value">95</div>
-                    </div>
-
-                    <div class="monthly-item">
-                        <div class="monthly-label">DEC</div>
-                        <div style="flex-grow: 1; margin: 0 20px;">
-                            <div class="monthly-bar">
-                                <div class="monthly-fill" style="width: 77%;"></div>
-                            </div>
-                        </div>
-                        <div class="monthly-value">20</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-     <!-- TOP LEAVES TAKERS  -->
+            <!-- Charts Row -->
+            <div class="row g-4">
+                
+                <!-- Leave Usage by Department -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="chart-card">
+                        <div class="chart-title">
+                            <svg width="48" height="48" viewBox="0 0 94 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter0_d_164_3152)">
+                            <rect x="19" y="19" width="56" height="56" rx="10" fill="url(#paint0_linear_164_3152)"/>
+                            </g>
+                            <path d="M31.4165 58.3333V56.9167C31.4165 54.2866 32.4613 51.7643 34.321 49.9045C36.1808 48.0448 38.7031 47 41.3332 47C43.9632 47 46.4856 48.0448 48.3453 49.9045C50.205 51.7643 51.2498 54.2866 51.2498 56.9167V58.3333" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M48.4165 49.8333C48.4165 47.9547 49.1628 46.153 50.4912 44.8247C51.8195 43.4963 53.6212 42.75 55.4998 42.75C56.43 42.75 57.3511 42.9332 58.2105 43.2892C59.0699 43.6452 59.8508 44.1669 60.5085 44.8247C61.1663 45.4824 61.688 46.2633 62.044 47.1227C62.4 47.982 62.5832 48.9031 62.5832 49.8333V50.5417" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M41.3332 47C42.8361 47 44.2774 46.403 45.3401 45.3403C46.4028 44.2776 46.9998 42.8362 46.9998 41.3333C46.9998 39.8304 46.4028 38.3891 45.3401 37.3264C44.2774 36.2637 42.8361 35.6667 41.3332 35.6667C39.8303 35.6667 38.3889 36.2637 37.3262 37.3264C36.2635 38.3891 35.6665 39.8304 35.6665 41.3333C35.6665 42.8362 36.2635 44.2776 37.3262 45.3403C38.3889 46.403 39.8303 47 41.3332 47ZM55.4998 42.75C56.627 42.75 57.708 42.3022 58.505 41.5052C59.3021 40.7082 59.7498 39.6272 59.7498 38.5C59.7498 37.3728 59.3021 36.2918 58.505 35.4948C57.708 34.6978 56.627 34.25 55.4998 34.25C54.3727 34.25 53.2917 34.6978 52.4946 35.4948C51.6976 36.2918 51.2498 37.3728 51.2498 38.5C51.2498 39.6272 51.6976 40.7082 52.4946 41.5052C53.2917 42.3022 54.3727 42.75 55.4998 42.75Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                            <filter id="filter0_d_164_3152" x="0" y="0" width="94" height="94" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset/>
+                            <feGaussianBlur stdDeviation="9.5"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_164_3152"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_164_3152" result="shape"/>
+                            </filter>
+                            <linearGradient id="paint0_linear_164_3152" x1="19" y1="19" x2="75" y2="75" gradientUnits="userSpaceOnUse">
+                            <stop offset="0.212209" stop-color="#6759F3"/>
+                            <stop offset="1" stop-color="#7524FC"/>
+                            </linearGradient>
+                            </defs>
+                            </svg>
+                            <h5 class="title-leave">Leave Usage by Department</h5>
+                        </div>
+                        
+                        <div class="department-row">
+                            <div class="department-info">
+                                <span class="department-name">Engineering</span>
+                                <span class="department-stats">45/60 days (75%)</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="department-row">
+                            <div class="department-info">
+                                <span class="department-name">Marketing</span>
+                                <span class="department-stats">32/40 days (80%)</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="department-row">
+                            <div class="department-info">
+                                <span class="department-name">HR</span>
+                                <span class="department-stats">28/40 days (60%)</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="department-row">
+                            <div class="department-info">
+                                <span class="department-name">Finance</span>
+                                <span class="department-stats">15/30 days (50%)</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill" style="width: 50%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="col-12 mb-4">
-    <div class="chart-card">
-        <div class="chart-title">
-            <svg width="94" height="95" viewBox="0 0 94 95" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d_164_3378)">
-<rect x="19" y="19.9741" width="56" height="56" rx="10" fill="url(#paint0_linear_164_3378)"/>
-</g>
-<path d="M60.125 41.4116H53.5625V43.2866H56.9281L49.8125 50.4022L45.7906 46.371C45.7035 46.2831 45.5998 46.2134 45.4855 46.1658C45.3713 46.1182 45.2488 46.0937 45.125 46.0937C45.0012 46.0937 44.8787 46.1182 44.7645 46.1658C44.6502 46.2134 44.5465 46.2831 44.4594 46.371L37.625 53.2147L38.9469 54.5366L45.125 48.3585L49.1469 52.3897C49.234 52.4776 49.3377 52.5474 49.452 52.595C49.5662 52.6426 49.6887 52.6671 49.8125 52.6671C49.9363 52.6671 50.0588 52.6426 50.173 52.595C50.2873 52.5474 50.391 52.4776 50.4781 52.3897L58.25 44.6085V47.9741H60.125V41.4116Z" fill="white"/>
-<defs>
-<filter id="filter0_d_164_3378" x="0" y="0.974121" width="94" height="94" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset/>
-<feGaussianBlur stdDeviation="9.5"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_164_3378"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_164_3378" result="shape"/>
-</filter>
-<linearGradient id="paint0_linear_164_3378" x1="19" y1="19.9741" x2="75" y2="75.9741" gradientUnits="userSpaceOnUse">
-<stop offset="0.212209" stop-color="#F03B62"/>
-<stop offset="1" stop-color="#DF2B72"/>
-</linearGradient>
-</defs>
-</svg>
-           <h5 class = "leave-take"  >TOP LEAVE TAKERS</h5>
-        </div>
-        
-        <!-- Employee 1 -->
-        <div class="employee-container">
-            <div class="employee-header">
-                <div class="employee-info">
-                    <div class="employee-name"><strong>Abdullah</strong></div>
-                    <div class="employee-department">Engineer</div>
+                <!-- Leave Types Distribution -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="chart-card">
+                        <div class="chart-title">
+                            <svg width="48" height="48" viewBox="0 0 94 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter0_d_164_3186)">
+                            <rect x="19" y="19" width="56" height="56" rx="10" fill="url(#paint0_linear_164_3186)"/>
+                            </g>
+                            <path d="M43.9814 35.186C41.9044 35.7178 40.0044 36.7879 38.473 38.2885C36.9416 39.7891 35.8331 41.667 35.2592 43.7327C34.6854 45.7985 34.6665 47.9791 35.2045 50.0545C35.7425 52.13 36.8183 54.0268 38.3235 55.5536C39.8286 57.0805 41.7098 58.1834 43.7773 58.751C45.8448 59.3187 48.0255 59.3311 50.0992 58.7868C52.173 58.2426 54.0666 57.1611 55.589 55.6514C57.1113 54.1416 58.2085 52.2571 58.77 50.1879" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M59.1905 47C59.1905 43.7669 57.9061 40.6662 55.62 38.3801C53.3338 36.0939 50.2331 34.8096 47 34.8096V47H59.1905Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                            <filter id="filter0_d_164_3186" x="0" y="0" width="94" height="94" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset/>
+                            <feGaussianBlur stdDeviation="9.5"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_164_3186"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_164_3186" result="shape"/>
+                            </filter>
+                            <linearGradient id="paint0_linear_164_3186" x1="19" y1="19" x2="75" y2="75" gradientUnits="userSpaceOnUse">
+                            <stop offset="0.212209" stop-color="#10B382"/>
+                            <stop offset="1" stop-color="#0D9788"/>
+                            </linearGradient>
+                            </defs>
+                            </svg>
+                            <h5 class="leave-type">Leave Types Distribution</h5>
+                        </div>
+                        
+                        <div class="department-row">
+                            <div class="department-info">
+                                <div class="department-name">Annual Leave</div>
+                                <div class="department-stats">89 Requests (57%)</div>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill" style="width: 57%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="department-row">
+                            <div class="department-info">
+                                <div class="department-name">Sick leave</div>
+                                <div class="department-stats">42 Requests (27%)</div>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill" style="width: 27%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="department-row">
+                            <div class="department-info">
+                                <div class="department-name">Emergency Leave</div>
+                                <div class="department-stats">25 Requests (16%)</div>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill" style="width: 16%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="leave-stats">
-                    <div class="leave-days">18 Days</div>
-                    <div class="leave-period">this year</div>
+
+                <!-- Monthly Leave Trend -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="chart-card">
+                        <div class="chart-title">
+                            <svg width="48" height="48" viewBox="0 0 94 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter0_d_164_3230)">
+                            <rect x="19" y="19" width="56" height="56" rx="10" fill="url(#paint0_linear_164_3230)"/>
+                            </g>
+                            <path d="M57.4375 33.375H35.5625C34.9823 33.375 34.4259 33.6055 34.0157 34.0157C33.6055 34.4259 33.375 34.9823 33.375 35.5625V57.4375C33.375 58.0177 33.6055 58.5741 34.0157 58.9843C34.4259 59.3945 34.9823 59.625 35.5625 59.625H57.4375C58.0177 59.625 58.5741 59.3945 58.9843 58.9843C59.3945 58.5741 59.625 58.0177 59.625 57.4375V35.5625C59.625 34.9823 59.3945 34.4259 58.9843 34.0157C58.5741 33.6055 58.0177 33.375 57.4375 33.375Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M38.7998 50.7547L42.9247 46.6298L46.1243 49.8214L53.7915 42.125" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M47.9585 42.125H53.7918V47.9583" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                            <filter id="filter0_d_164_3230" x="0" y="0" width="94" height="94" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset/>
+                            <feGaussianBlur stdDeviation="9.5"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_164_3230"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_164_3230" result="shape"/>
+                            </filter>
+                            <linearGradient id="paint0_linear_164_3230" x1="19" y1="19" x2="75" y2="75" gradientUnits="userSpaceOnUse">
+                            <stop offset="0.212209" stop-color="#F3970B"/>
+                            <stop offset="1" stop-color="#EB600C"/>
+                            </linearGradient>
+                            </defs>
+                            </svg>
+                            <h5 class="top-take">Monthly Leave Trend</h5>
+                        </div>
+                        
+                        <div class="monthly-item">
+                            <div class="monthly-label">JAN</div>
+                            <div class="monthly-bar">
+                                <div class="monthly-fill" style="width: 45%"></div>
+                            </div>
+                            <div class="monthly-value">40</div>
+                        </div>
+                        
+                        <div class="monthly-item">
+                            <div class="monthly-label">FEB</div>
+                            <div class="monthly-bar">
+                                <div class="monthly-fill" style="width: 95%"></div>
+                            </div>
+                            <div class="monthly-value">100</div>
+                        </div>
+                        
+                        <div class="monthly-item">
+                            <div class="monthly-label">MAR</div>
+                            <div class="monthly-bar">
+                                <div class="monthly-fill" style="width: 75%"></div>
+                            </div>
+                            <div class="monthly-value">89</div>
+                        </div>
+                        
+                        <div class="monthly-item">
+                            <div class="monthly-label">APR</div>
+                            <div class="monthly-bar">
+                                <div class="monthly-fill" style="width: 50%"></div>
+                            </div>
+                            <div class="monthly-value">50</div>
+                        </div>
+                        
+                        <div class="monthly-item">
+                            <div class="monthly-label">MAY</div>
+                            <div class="monthly-bar">
+                                <div class="monthly-fill" style="width: 46%"></div>
+                            </div>
+                            <div class="monthly-value">46</div>
+                        </div>
+                        
+                        <div class="monthly-item">
+                            <div class="monthly-label">JUN</div>
+                            <div class="monthly-bar">
+                                <div class="monthly-fill" style="width: 30%"></div>
+                            </div>
+                            <div class="monthly-value">30</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-        </div>
-        
-        <!-- Employee 2 -->
-        <div class="employee-container">
-            <div class="employee-header">
-                <div class="employee-info">
-                    <div class="employee-name"><strong>Taniya</strong></div>
-                    <div class="employee-department">HR</div>
+
+                <!-- Top Leave Takers -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="chart-card">
+                        <div class="chart-title">
+                            <svg width="48" height="48" viewBox="0 0 94 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter0_d_164_3378)">
+                            <rect x="19" y="19.9741" width="56" height="56" rx="10" fill="url(#paint0_linear_164_3378)"/>
+                            </g>
+                            <path d="M60.125 41.4116H53.5625V43.2866H56.9281L49.8125 50.4022L45.7906 46.371C45.7035 46.2831 45.5998 46.2134 45.4855 46.1658C45.3713 46.1182 45.2488 46.0937 45.125 46.0937C45.0012 46.0937 44.8787 46.1182 44.7645 46.1658C44.6502 46.2134 44.5465 46.2831 44.4594 46.371L37.625 53.2147L38.9469 54.5366L45.125 48.3585L49.1469 52.3897C49.234 52.4776 49.3377 52.5474 49.452 52.595C49.5662 52.6426 49.6887 52.6671 49.8125 52.6671C49.9363 52.6671 50.0588 52.6426 50.173 52.595C50.2873 52.5474 50.391 52.4776 50.4781 52.3897L58.25 44.6085V47.9741H60.125V41.4116Z" fill="white"/>
+                            <defs>
+                            <filter id="filter0_d_164_3378" x="0" y="0.974121" width="94" height="94" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset/>
+                            <feGaussianBlur stdDeviation="9.5"/>
+                            <feComposite in2="hardAlpha" operator="out"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_164_3378"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_164_3378" result="shape"/>
+                            </filter>
+                            <linearGradient id="paint0_linear_164_3378" x1="19" y1="19.9741" x2="75" y2="75.9741" gradientUnits="userSpaceOnUse">
+                            <stop offset="0.212209" stop-color="#F03B62"/>
+                            <stop offset="1" stop-color="#DF2B72"/>
+                            </linearGradient>
+                            </defs>
+                            </svg>
+                            <h5 class="leave-take">Top Leave Takers</h5>
+                        </div>
+                        
+                        <!-- Employee 1 -->
+                        <div class="employee-container">
+                            <div class="employee-header">
+                                <div class="employee-info">
+                                    <div class="employee-name"><strong>Abdullah</strong></div>
+                                    <div class="employee-department">Engineer</div>
+                                </div>
+                                <div class="leave-stats">
+                                    <div class="leave-days">18 Days</div>
+                                    <div class="leave-period">this year</div>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Employee 2 -->
+                        <div class="employee-container">
+                            <div class="employee-header">
+                                <div class="employee-info">
+                                    <div class="employee-name"><strong>Taniya</strong></div>
+                                    <div class="employee-department">HR</div>
+                                </div>
+                                <div class="leave-stats">
+                                    <div class="leave-days">10 Days</div>
+                                    <div class="leave-period">this year</div>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-primary" role="progressbar" style="width: 42%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Employee 3 -->
+                        <div class="employee-container">
+                            <div class="employee-header">
+                                <div class="employee-info">
+                                    <div class="employee-name"><strong>Azan</strong></div>
+                                    <div class="employee-department">Marketing</div>
+                                </div>
+                                <div class="leave-stats">
+                                    <div class="leave-days">15 Days</div>
+                                    <div class="leave-period">this year</div>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-primary" role="progressbar" style="width: 62%" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Employee 4 -->
+                        <div class="employee-container">
+                            <div class="employee-header">
+                                <div class="employee-info">
+                                    <div class="employee-name"><strong>Rehman</strong></div>
+                                    <div class="employee-department">Finance</div>
+                                </div>
+                                <div class="leave-stats">
+                                    <div class="leave-days">12 Days</div>
+                                    <div class="leave-period">this year</div>
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="leave-stats">
-                    <div class="leave-days">10 Days</div>
-                    <div class="leave-period">this year</div>
-                </div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-primary" role="progressbar" style="width: 42%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-        </div>
-        
-        <!-- Employee 3 -->
-        <div class="employee-container">
-            <div class="employee-header">
-                <div class="employee-info">
-                    <div class="employee-name"><strong>Azan</strong></div>
-                    <div class="employee-department">Marketing</div>
-                </div>
-                <div class="leave-stats">
-                    <div class="leave-days">15 Days</div>
-                    <div class="leave-period">this year</div>
-                </div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-primary" role="progressbar" style="width: 62%" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-        </div>
-        
-        <!-- Employee 4 -->
-        <div class="employee-container">
-            <div class="employee-header">
-                <div class="employee-info">
-                    <div class="employee-name"><strong>Wahid</strong></div>
-                    <div class="employee-department">Finance</div>
-                </div>
-                <div class="leave-stats">
-                    <div class="leave-days">12 Days</div>
-                    <div class="leave-period">this year</div>
-                </div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                
             </div>
         </div>
     </div>
-</div>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js"></script>
     <script>
         function goBack() {
-            
             if (window.history.length > 1) {
                 window.history.back();
             } else {
-                
                 window.location.href = 'manager-dashboard.html'; 
             }
         }

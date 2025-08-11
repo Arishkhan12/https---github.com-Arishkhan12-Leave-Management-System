@@ -1,0 +1,114 @@
+    body {
+                    background-color: #f8f9fa;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+                
+                .navbar-custom {
+                    background-color: #ffffff;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                    padding: 15px 0;
+                }
+                
+                .navbar-brand {
+                    font-weight: 700;
+                    color: #2c3e50;
+                    font-size: 1.5rem;
+                }
+                
+                .nav-link {
+                    color: #2c3e50;
+                    font-weight: 500;
+                    margin: 0 10px;
+                }
+                
+                .nav-link:hover {
+                    color: #3498db;
+                }
+                
+                
+                
+                .success-header {
+                    color: #28a745;
+                    font-weight: 700;
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+                
+                .success-icon {
+                    margin: 0 auto 15px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 60px;
+                    height: 60px;
+                    background-color: #DCFCE7;
+                    border-radius: 50%;
+                }
+                
+                .request-container {
+                    max-width: 900px;
+                    margin: 0 auto 30px;
+                    background-color: white;
+                    border-radius: 20px;
+                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                    padding: 30px;
+                }
+                
+                .request-title {
+                    color: #07021b;
+                    font-weight: 600;
+                    margin-bottom: 25px;
+                    display: flex;
+                    align-items: center;
+                }
+                
+                .request-details {
+                    margin-bottom: 25px;
+                }
+                
+                .detail-title {
+                    font-weight: 600;
+                    color: #495057;
+                    
+                }
+                
+                .approval-section {
+                    margin-bottom: 25px;
+                }
+                
+                .form-check-input {
+                    margin-top: 0.25rem;
+                }
+            
+        .next-steps  {
+                    max-width: 900px;
+                    margin: 0 auto 30px;
+                    background-color: white;
+                    border-radius: 20px;
+                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                    padding: 30px;
+                }
+                .btn-custom {
+                    margin-right: 10px;
+                    padding: 8px 20px;
+                }
+                
+                .divider {
+                    border-top: 1px dashed #dee2e6;
+                    margin: 20px 0;}
+                .success-sub {
+
+                    text-align: center;
+        } 
+    .button {
+        background: linear-gradient(90deg, #675CF3 0%, #3C368E 100%); 
+        border: none;
+        border-radius: 10px; 
+        color: white; 
+        padding: 10px 20px; 
+        cursor: pointer;
+        font-size: 16px; 
+        outline: none; 
+    }
+
+   

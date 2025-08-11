@@ -1,290 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leave Management System - Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet" />
-  <link href="  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet"/>
-    
-      <style>
-             body {
-     background: linear-gradient(296.82deg, #ECFFF9 0%, #EDFEFD 100%);
-      font-family: 'Segoe UI', sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 40px;
-    }
- 
-    .portal-header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
- 
-    .portal-header img {
-      width: 50px;
-      height: 50px;
-      margin-bottom: 10px;
-    }
- 
-    .portal-header h1 {
-      font-weight: bold;
-      color: #0D9687;;
-    }
- 
-    .portal-header p {
-      color: #7E7D7D;
-      margin-top: -5px;
-    }
- 
-    .login-container {
-      background-color: white;
-      border-radius: 15px;
-      padding: 40px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 450px;
-    }
- 
-    .form-control:focus {
-      box-shadow: none;
-      border-color: #10B581;
-    }
- 
-    .form-check-input:checked {
-      background-color: #10B581;
-      border-color: #10B581;
-    }
- 
-    .btn-primary {
-      background: linear-gradient(90.61deg, #11B482 1.77%, #0E9787 97.92%);
-      border: none;
-      width: 100%;
-      padding: 10px;
-      font-weight: bold;
-      color: white;
-      transition: all 0.3s ease;
-    }
- 
-    .btn-primary:hover {
-      background: linear-gradient(90.61deg, #10B581 1.77%, #0D9687 97.92%);
-      box-shadow: 0 4px 15px rgba(229, 227, 250, 0.466);
-    }
- 
-    .back-link {
-      position: absolute;
-      top: 20px;
-      left: 30px;
-      color: #10B581;
-      font-weight: 500;
-      text-decoration: none;
-    }
- 
-    .form-label {
-      text-align: left;
-      display: block;
-      margin-top: 10px;
-    }
- 
-    .form-check {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
- 
-    .form-check-label, .forgot-link {
-      font-size: 0.9rem;
-    }
- 
-    .forgot-link {
-      color: black;
-      text-decoration: none;
-    }
- 
-    .forgot-link:hover {
-      text-decoration: underline;
-    }
- 
-    .input-group-text {
-      background-color: transparent;
-      border-right: none;
-    }
-    .form-control.with-icon {
-      border-left: none;
-    }
-    .password-toggle {
-      cursor: pointer;
-      background-color: transparent;
-      border-left: none;
-    }
-   
-    /* Blue icon colors */
-    .fa-user, .fa-lock {
-      color: #10B581; /* Google blue color */
-    }
-   
-    .password-toggle i {
-      color: #10B581;
-      transition: color 0.3s ease;
-    }
-   
-    .password-toggle:hover i {
-      color: #10B581;
-    }
-   
-    /* Input group border styling */
-    .input-group {
-      border: 1px solid #ced4da;
-      border-radius: 0.375rem;
-      transition: border-color 0.15s ease-in-out;
-    }
-   
-    .input-group:focus-within {
-      border-color: #10B581 #0D9687;
-    }
-      </style>
-</head>
-<body>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Leave Management System - Login</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/manager-login.css">    
+  </head>
+  <body>
 
-   <a href="Indexmain.htm" class="back-link">&larr; Back</a>
+    <a href="Indexmain.htm" class="back-link">&larr; Back</a>
 
-<div class="portal-header">
-   <!-- image icon  -->
- <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="40" height="40" rx="10" fill="url(#paint0_linear_15_319)"/>
-<path d="M22.0479 15.5088L22.2607 16.1611L22.8936 16.4268L30.2158 19.5L22.8936 22.5732L22.2607 22.8389L22.0479 23.4912L19.5449 31.1621L17.043 23.4912L16.8301 22.8389L16.1973 22.5732L8.87402 19.5L16.1973 16.4268L16.8301 16.1611L17.043 15.5088L19.5449 7.83691L22.0479 15.5088Z" fill="url(#paint1_linear_15_319)" stroke="white" stroke-width="3"/>
-<mask id="path-3-inside-1_15_319" fill="white">
-<path d="M31.3637 4.8335L32.3458 7.84437L35 8.9585L32.3458 10.0726L31.3637 13.0835L30.3815 10.0726L27.7273 8.9585L30.3815 7.84437L31.3637 4.8335Z"/>
-</mask>
-<path d="M31.3637 4.8335L32.3458 7.84437L35 8.9585L32.3458 10.0726L31.3637 13.0835L30.3815 10.0726L27.7273 8.9585L30.3815 7.84437L31.3637 4.8335Z" fill="url(#paint2_linear_15_319)"/>
-<path d="M31.3637 4.8335L34.2158 3.90314L31.3637 -4.84024L28.5116 3.90314L31.3637 4.8335ZM32.3458 7.84437L29.4937 8.77473L29.9193 10.0794L31.1847 10.6106L32.3458 7.84437ZM35 8.9585L36.1611 11.7247L42.7511 8.9585L36.1611 6.19231L35 8.9585ZM32.3458 10.0726L31.1847 7.30643L29.9193 7.83759L29.4937 9.14227L32.3458 10.0726ZM31.3637 13.0835L28.5116 14.0139L31.3637 22.7572L34.2158 14.0139L31.3637 13.0835ZM30.3815 10.0726L33.2336 9.14227L32.808 7.83759L31.5426 7.30643L30.3815 10.0726ZM27.7273 8.9585L26.5662 6.19231L19.9762 8.9585L26.5662 11.7247L27.7273 8.9585ZM30.3815 7.84437L31.5426 10.6106L32.808 10.0794L33.2336 8.77473L30.3815 7.84437ZM31.3637 4.8335L28.5116 5.76385L29.4937 8.77473L32.3458 7.84437L35.1979 6.91402L34.2158 3.90314L31.3637 4.8335ZM32.3458 7.84437L31.1847 10.6106L33.8389 11.7247L35 8.9585L36.1611 6.19231L33.5069 5.07819L32.3458 7.84437ZM35 8.9585L33.8389 6.19231L31.1847 7.30643L32.3458 10.0726L33.5069 12.8388L36.1611 11.7247L35 8.9585ZM32.3458 10.0726L29.4937 9.14227L28.5116 12.1531L31.3637 13.0835L34.2158 14.0139L35.1979 11.003L32.3458 10.0726ZM31.3637 13.0835L34.2158 12.1531L33.2336 9.14227L30.3815 10.0726L27.5294 11.003L28.5116 14.0139L31.3637 13.0835ZM30.3815 10.0726L31.5426 7.30643L28.8884 6.19231L27.7273 8.9585L26.5662 11.7247L29.2204 12.8388L30.3815 10.0726ZM27.7273 8.9585L28.8884 11.7247L31.5426 10.6106L30.3815 7.84437L29.2204 5.07819L26.5662 6.19231L27.7273 8.9585ZM30.3815 7.84437L33.2336 8.77473L34.2158 5.76385L31.3637 4.8335L28.5116 3.90314L27.5294 6.91402L30.3815 7.84437Z" fill="white" mask="url(#path-3-inside-1_15_319)"/>
-<mask id="path-5-inside-2_15_319" fill="white">
-<path d="M10.9091 25.9165L11.5229 28.2583L13.1818 29.1248L11.5229 29.9914L10.9091 32.3332L10.2952 29.9914L8.63635 29.1248L10.2952 28.2583L10.9091 25.9165Z"/>
-</mask>
-<path d="M10.9091 25.9165L11.5229 28.2583L13.1818 29.1248L11.5229 29.9914L10.9091 32.3332L10.2952 29.9914L8.63635 29.1248L10.2952 28.2583L10.9091 25.9165Z" fill="url(#paint3_linear_15_319)"/>
-<path d="M10.9091 25.9165L13.811 25.1558L10.9091 14.0849L8.00712 25.1558L10.9091 25.9165ZM11.5229 28.2583L8.62096 29.019L8.9575 30.3028L10.1339 30.9174L11.5229 28.2583ZM13.1818 29.1248L14.5708 31.7839L19.6613 29.1248L14.5708 26.4658L13.1818 29.1248ZM11.5229 29.9914L10.1339 27.3323L8.9575 27.9468L8.62096 29.2307L11.5229 29.9914ZM10.9091 32.3332L8.00712 33.0938L10.9091 44.1647L13.811 33.0938L10.9091 32.3332ZM10.2952 29.9914L13.1972 29.2307L12.8607 27.9468L11.6842 27.3323L10.2952 29.9914ZM8.63635 29.1248L7.24735 26.4658L2.15689 29.1248L7.24735 31.7839L8.63635 29.1248ZM10.2952 28.2583L11.6842 30.9174L12.8607 30.3028L13.1972 29.019L10.2952 28.2583ZM10.9091 25.9165L8.00712 26.6772L8.62096 29.019L11.5229 28.2583L14.4249 27.4976L13.811 25.1558L10.9091 25.9165ZM11.5229 28.2583L10.1339 30.9174L11.7928 31.7839L13.1818 29.1248L14.5708 26.4658L12.9119 25.5992L11.5229 28.2583ZM13.1818 29.1248L11.7928 26.4658L10.1339 27.3323L11.5229 29.9914L12.9119 32.6505L14.5708 31.7839L13.1818 29.1248ZM11.5229 29.9914L8.62096 29.2307L8.00712 31.5725L10.9091 32.3332L13.811 33.0938L14.4249 30.7521L11.5229 29.9914ZM10.9091 32.3332L13.811 31.5725L13.1972 29.2307L10.2952 29.9914L7.39328 30.7521L8.00712 33.0938L10.9091 32.3332ZM10.2952 29.9914L11.6842 27.3323L10.0254 26.4658L8.63635 29.1248L7.24735 31.7839L8.90623 32.6505L10.2952 29.9914ZM8.63635 29.1248L10.0254 31.7839L11.6842 30.9174L10.2952 28.2583L8.90623 25.5992L7.24735 26.4658L8.63635 29.1248ZM10.2952 28.2583L13.1972 29.019L13.811 26.6772L10.9091 25.9165L8.00712 25.1558L7.39328 27.4976L10.2952 28.2583Z" fill="white" mask="url(#path-5-inside-2_15_319)"/>
-<defs>
-<linearGradient id="paint0_linear_15_319" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse">
-<stop stop-color="#0D9687"/>
-<stop offset="1" stop-color="#0D9687"/>
-</linearGradient>
-<linearGradient id="paint1_linear_15_319" x1="19.5455" y1="3" x2="19.5455" y2="36" gradientUnits="userSpaceOnUse">
-<stop stop-color="#0D9687"/>
-<stop offset="1" stop-color="#0D9687"/>
-</linearGradient>
-<linearGradient id="paint2_linear_15_319" x1="31.3637" y1="4.8335" x2="31.3637" y2="13.0835" gradientUnits="userSpaceOnUse">
-<stop stop-color="#0D9687"/>
-<stop offset="1" stop-color="#0D9687"/>
-</linearGradient>
-<linearGradient id="paint3_linear_15_319" x1="10.9091" y1="25.9165" x2="10.9091" y2="32.3332" gradientUnits="userSpaceOnUse">
-<stop stop-color="#0D9687"/>
-<stop offset="1" stop-color="#0D9687"/>
-</linearGradient>
-</defs>
-</svg>
-
-    <rect width="40" height="40" rx="10" fill="url(#paint0_linear_10_134)"/>
-    <path d="M4.41669 31.3333V29.9167C4.41669 27.2866 5.46148 24.7643 7.32121 22.9045C9.18095 21.0448 11.7033 20 14.3334 20C16.9634 20 19.4858 21.0448 21.3455 22.9045C23.2052 24.7643 24.25 27.2866 24.25 29.9167V31.3333" stroke="white" stroke-width="2" stroke-linecap="round"/>
-    <path d="M21.4167 22.8333C21.4167 20.9547 22.163 19.153 23.4913 17.8247C24.8197 16.4963 26.6214 15.75 28.5 15.75C29.4302 15.75 30.3513 15.9332 31.2107 16.2892C32.0701 16.6452 32.8509 17.1669 33.5087 17.8247C34.1664 18.4824 34.6882 19.2633 35.0442 20.1227C35.4001 20.982 35.5834 21.9031 35.5834 22.8333V23.5417" stroke="white" stroke-width="2" stroke-linecap="round"/>
-    <path d="M14.3334 20C15.8362 20 17.2776 19.403 18.3403 18.3403C19.403 17.2776 20 15.8362 20 14.3333C20 12.8304 19.403 11.3891 18.3403 10.3264C17.2776 9.26369 15.8362 8.66667 14.3334 8.66667C12.8305 8.66667 11.3891 9.26369 10.3264 10.3264C9.26371 11.3891 8.66669 12.8304 8.66669 14.3333C8.66669 15.8362 9.26371 17.2776 10.3264 18.3403C11.3891 19.403 12.8305 20 14.3334 20ZM28.5 15.75C29.6272 15.75 30.7082 15.3022 31.5052 14.5052C32.3023 13.7082 32.75 12.6272 32.75 11.5C32.75 10.3728 32.3023 9.29183 31.5052 8.49480C30.7082 7.69777 29.6272 7.25 28.5 7.25C27.3729 7.25 26.2918 7.69777 25.4948 8.49480C24.6978 9.29183 24.25 10.3728 24.25 11.5C24.25 12.6272 24.6978 13.7082 25.4948 14.5052C26.2918 15.3022 27.3729 15.75 28.5 15.75Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <defs>
-      <linearGradient id="paint0_linear_10_134" x1="2" y1="1.5" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#6951F5"/>
-        <stop offset="0.889474" stop-color="#7526FC"/>
-      </linearGradient>
-    </defs>
+  <div class="portal-header">
+    <!-- image icon  -->
+  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="40" height="40" rx="10" fill="url(#paint0_linear_15_319)"/>
+  <path d="M22.0479 15.5088L22.2607 16.1611L22.8936 16.4268L30.2158 19.5L22.8936 22.5732L22.2607 22.8389L22.0479 23.4912L19.5449 31.1621L17.043 23.4912L16.8301 22.8389L16.1973 22.5732L8.87402 19.5L16.1973 16.4268L16.8301 16.1611L17.043 15.5088L19.5449 7.83691L22.0479 15.5088Z" fill="url(#paint1_linear_15_319)" stroke="white" stroke-width="3"/>
+  <mask id="path-3-inside-1_15_319" fill="white">
+  <path d="M31.3637 4.8335L32.3458 7.84437L35 8.9585L32.3458 10.0726L31.3637 13.0835L30.3815 10.0726L27.7273 8.9585L30.3815 7.84437L31.3637 4.8335Z"/>
+  </mask>
+  <path d="M31.3637 4.8335L32.3458 7.84437L35 8.9585L32.3458 10.0726L31.3637 13.0835L30.3815 10.0726L27.7273 8.9585L30.3815 7.84437L31.3637 4.8335Z" fill="url(#paint2_linear_15_319)"/>
+  <path d="M31.3637 4.8335L34.2158 3.90314L31.3637 -4.84024L28.5116 3.90314L31.3637 4.8335ZM32.3458 7.84437L29.4937 8.77473L29.9193 10.0794L31.1847 10.6106L32.3458 7.84437ZM35 8.9585L36.1611 11.7247L42.7511 8.9585L36.1611 6.19231L35 8.9585ZM32.3458 10.0726L31.1847 7.30643L29.9193 7.83759L29.4937 9.14227L32.3458 10.0726ZM31.3637 13.0835L28.5116 14.0139L31.3637 22.7572L34.2158 14.0139L31.3637 13.0835ZM30.3815 10.0726L33.2336 9.14227L32.808 7.83759L31.5426 7.30643L30.3815 10.0726ZM27.7273 8.9585L26.5662 6.19231L19.9762 8.9585L26.5662 11.7247L27.7273 8.9585ZM30.3815 7.84437L31.5426 10.6106L32.808 10.0794L33.2336 8.77473L30.3815 7.84437ZM31.3637 4.8335L28.5116 5.76385L29.4937 8.77473L32.3458 7.84437L35.1979 6.91402L34.2158 3.90314L31.3637 4.8335ZM32.3458 7.84437L31.1847 10.6106L33.8389 11.7247L35 8.9585L36.1611 6.19231L33.5069 5.07819L32.3458 7.84437ZM35 8.9585L33.8389 6.19231L31.1847 7.30643L32.3458 10.0726L33.5069 12.8388L36.1611 11.7247L35 8.9585ZM32.3458 10.0726L29.4937 9.14227L28.5116 12.1531L31.3637 13.0835L34.2158 14.0139L35.1979 11.003L32.3458 10.0726ZM31.3637 13.0835L34.2158 12.1531L33.2336 9.14227L30.3815 10.0726L27.5294 11.003L28.5116 14.0139L31.3637 13.0835ZM30.3815 10.0726L31.5426 7.30643L28.8884 6.19231L27.7273 8.9585L26.5662 11.7247L29.2204 12.8388L30.3815 10.0726ZM27.7273 8.9585L28.8884 11.7247L31.5426 10.6106L30.3815 7.84437L29.2204 5.07819L26.5662 6.19231L27.7273 8.9585ZM30.3815 7.84437L33.2336 8.77473L34.2158 5.76385L31.3637 4.8335L28.5116 3.90314L27.5294 6.91402L30.3815 7.84437Z" fill="white" mask="url(#path-3-inside-1_15_319)"/>
+  <mask id="path-5-inside-2_15_319" fill="white">
+  <path d="M10.9091 25.9165L11.5229 28.2583L13.1818 29.1248L11.5229 29.9914L10.9091 32.3332L10.2952 29.9914L8.63635 29.1248L10.2952 28.2583L10.9091 25.9165Z"/>
+  </mask>
+  <path d="M10.9091 25.9165L11.5229 28.2583L13.1818 29.1248L11.5229 29.9914L10.9091 32.3332L10.2952 29.9914L8.63635 29.1248L10.2952 28.2583L10.9091 25.9165Z" fill="url(#paint3_linear_15_319)"/>
+  <path d="M10.9091 25.9165L13.811 25.1558L10.9091 14.0849L8.00712 25.1558L10.9091 25.9165ZM11.5229 28.2583L8.62096 29.019L8.9575 30.3028L10.1339 30.9174L11.5229 28.2583ZM13.1818 29.1248L14.5708 31.7839L19.6613 29.1248L14.5708 26.4658L13.1818 29.1248ZM11.5229 29.9914L10.1339 27.3323L8.9575 27.9468L8.62096 29.2307L11.5229 29.9914ZM10.9091 32.3332L8.00712 33.0938L10.9091 44.1647L13.811 33.0938L10.9091 32.3332ZM10.2952 29.9914L13.1972 29.2307L12.8607 27.9468L11.6842 27.3323L10.2952 29.9914ZM8.63635 29.1248L7.24735 26.4658L2.15689 29.1248L7.24735 31.7839L8.63635 29.1248ZM10.2952 28.2583L11.6842 30.9174L12.8607 30.3028L13.1972 29.019L10.2952 28.2583ZM10.9091 25.9165L8.00712 26.6772L8.62096 29.019L11.5229 28.2583L14.4249 27.4976L13.811 25.1558L10.9091 25.9165ZM11.5229 28.2583L10.1339 30.9174L11.7928 31.7839L13.1818 29.1248L14.5708 26.4658L12.9119 25.5992L11.5229 28.2583ZM13.1818 29.1248L11.7928 26.4658L10.1339 27.3323L11.5229 29.9914L12.9119 32.6505L14.5708 31.7839L13.1818 29.1248ZM11.5229 29.9914L8.62096 29.2307L8.00712 31.5725L10.9091 32.3332L13.811 33.0938L14.4249 30.7521L11.5229 29.9914ZM10.9091 32.3332L13.811 31.5725L13.1972 29.2307L10.2952 29.9914L7.39328 30.7521L8.00712 33.0938L10.9091 32.3332ZM10.2952 29.9914L11.6842 27.3323L10.0254 26.4658L8.63635 29.1248L7.24735 31.7839L8.90623 32.6505L10.2952 29.9914ZM8.63635 29.1248L10.0254 31.7839L11.6842 30.9174L10.2952 28.2583L8.90623 25.5992L7.24735 26.4658L8.63635 29.1248ZM10.2952 28.2583L13.1972 29.019L13.811 26.6772L10.9091 25.9165L8.00712 25.1558L7.39328 27.4976L10.2952 28.2583Z" fill="white" mask="url(#path-5-inside-2_15_319)"/>
+  <defs>
+  <linearGradient id="paint0_linear_15_319" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse">
+  <stop stop-color="#0D9687"/>
+  <stop offset="1" stop-color="#0D9687"/>
+  </linearGradient>
+  <linearGradient id="paint1_linear_15_319" x1="19.5455" y1="3" x2="19.5455" y2="36" gradientUnits="userSpaceOnUse">
+  <stop stop-color="#0D9687"/>
+  <stop offset="1" stop-color="#0D9687"/>
+  </linearGradient>
+  <linearGradient id="paint2_linear_15_319" x1="31.3637" y1="4.8335" x2="31.3637" y2="13.0835" gradientUnits="userSpaceOnUse">
+  <stop stop-color="#0D9687"/>
+  <stop offset="1" stop-color="#0D9687"/>
+  </linearGradient>
+  <linearGradient id="paint3_linear_15_319" x1="10.9091" y1="25.9165" x2="10.9091" y2="32.3332" gradientUnits="userSpaceOnUse">
+  <stop stop-color="#0D9687"/>
+  <stop offset="1" stop-color="#0D9687"/>
+  </linearGradient>
+  </defs>
   </svg>
-  <h1>Manager Portal</h1>
-  <p>Sign in to manage your leave request</p>
-</div>
-  
-  <div class="login-container">
-    <h1 class="text-center mb-4">Welcome Back!</h1>
- 
-    <form id="loginForm">
-      <div class="mb-3 text-start">
-        <label for="username" class="form-label">Username or Email *</label>
-        <div class="input-group">
-          <span class="input-group-text"><i class="fas fa-user"></i></span>
-          <input type="text" class="form-control with-icon" id="username" placeholder="Enter username or email">
-        </div>
-      </div>
- 
-      <div class="mb-3 text-start">
-        <label for="password" class="form-label">Password *</label>
-        <div class="input-group">
-          <span class="input-group-text"><i class="fas fa-lock"></i></span>
-          <input type="password" class="form-control with-icon" id="password" placeholder="Enter your password">
-          <span class="input-group-text password-toggle" onclick="togglePassword()">
-            <i class="fas fa-eye"></i>
-          </span>
-        </div>
-      </div>
- 
-      <div class="form-check">
-        <div>
-          <input class="form-check-input" type="checkbox" id="rememberMe">
-          <label class="form-check-label" for="rememberMe">Remember me</label>
-        </div>
-        <a href="#" class="forgot-link">Forgot Password?</a>
-      </div>
- 
-      <button type="submit" class="btn btn-primary">Sign in</button>
-    </form>
-    <div id="message" class="mt-3 text-center"></div>
+
+      <rect width="40" height="40" rx="10" fill="url(#paint0_linear_10_134)"/>
+      <path d="M4.41669 31.3333V29.9167C4.41669 27.2866 5.46148 24.7643 7.32121 22.9045C9.18095 21.0448 11.7033 20 14.3334 20C16.9634 20 19.4858 21.0448 21.3455 22.9045C23.2052 24.7643 24.25 27.2866 24.25 29.9167V31.3333" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      <path d="M21.4167 22.8333C21.4167 20.9547 22.163 19.153 23.4913 17.8247C24.8197 16.4963 26.6214 15.75 28.5 15.75C29.4302 15.75 30.3513 15.9332 31.2107 16.2892C32.0701 16.6452 32.8509 17.1669 33.5087 17.8247C34.1664 18.4824 34.6882 19.2633 35.0442 20.1227C35.4001 20.982 35.5834 21.9031 35.5834 22.8333V23.5417" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      <path d="M14.3334 20C15.8362 20 17.2776 19.403 18.3403 18.3403C19.403 17.2776 20 15.8362 20 14.3333C20 12.8304 19.403 11.3891 18.3403 10.3264C17.2776 9.26369 15.8362 8.66667 14.3334 8.66667C12.8305 8.66667 11.3891 9.26369 10.3264 10.3264C9.26371 11.3891 8.66669 12.8304 8.66669 14.3333C8.66669 15.8362 9.26371 17.2776 10.3264 18.3403C11.3891 19.403 12.8305 20 14.3334 20ZM28.5 15.75C29.6272 15.75 30.7082 15.3022 31.5052 14.5052C32.3023 13.7082 32.75 12.6272 32.75 11.5C32.75 10.3728 32.3023 9.29183 31.5052 8.49480C30.7082 7.69777 29.6272 7.25 28.5 7.25C27.3729 7.25 26.2918 7.69777 25.4948 8.49480C24.6978 9.29183 24.25 10.3728 24.25 11.5C24.25 12.6272 24.6978 13.7082 25.4948 14.5052C26.2918 15.3022 27.3729 15.75 28.5 15.75Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <defs>
+        <linearGradient id="paint0_linear_10_134" x1="2" y1="1.5" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#6951F5"/>
+          <stop offset="0.889474" stop-color="#7526FC"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <h1>Manager Portal</h1>
+    <p>Sign in to manage your leave request</p>
   </div>
- 
+    
+    <div class="login-container">
+      <h1 class="text-center mb-4">Welcome Back!</h1>
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
- 
-
-    <script>
-  document.addEventListener("DOMContentLoaded", function () {
+      <form id="loginForm">
+        <div class="mb-3 text-start">
+          <label for="username" class="form-label">Username or Email *</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-user"></i></span>
+            <input type="text" class="form-control with-icon" id="username" placeholder="Enter username or email">
+          </div>
+        </div>
   
-    function togglePassword() {
-      const passwordInput = document.getElementById("password");
-      const toggleIcon = document.querySelector(".password-toggle");
-
-      if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        toggleIcon.classList.remove("fa-eye");
-        toggleIcon.classList.add("fa-eye-slash");
-      } else {
-        passwordInput.type = "password";
-        toggleIcon.classList.remove("fa-eye-slash");
-        toggleIcon.classList.add("fa-eye");
-      }
-    }
-
-    window.togglePassword = togglePassword; 
-
+        <div class="mb-3 text-start">
+          <label for="password" class="form-label">Password *</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+            <input type="password" class="form-control with-icon" id="password" placeholder="Enter your password">
+            <span class="input-group-text password-toggle" onclick="togglePassword()">
+              <i class="fas fa-eye"></i>
+            </span>
+          </div>
+        </div>
   
-    document.getElementById("loginForm").addEventListener("submit", function (e) {
-      e.preventDefault();
+        <div class="form-check">
+          <div>
+            <input class="form-check-input" type="checkbox" id="rememberMe">
+            <label class="form-check-label" for="rememberMe">Remember me</label>
+          </div>
+          <a href="#" class="forgot-link">Forgot Password?</a>
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </form>
+      <div id="message" class="mt-3 text-center"></div>
+    </div>
+  
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  
 
-      const username = document.getElementById("username").value.trim();
-      const password = document.getElementById("password").value.trim();
-      const messageDiv = document.getElementById("message");
-
-      const savedUser = JSON.parse(localStorage.getItem("managerUser"));
-
-      if (
-        savedUser &&
-        (username === savedUser.username || username === savedUser.email) &&
-        password === savedUser.password
-      ) {
-        localStorage.setItem("isManagerLoggedIn", "true");
-        window.location.href = "manager-dashboard.html";
-      } else {
-        messageDiv.innerHTML = `<div class="alert alert-danger mt-3">❌ Invalid username or password</div>`;
-      }
-    });
-  });
-</script>
-</body>
-</html>
+      <script src="../js/manager-login.js"></script>
+  </body>
+  </html>

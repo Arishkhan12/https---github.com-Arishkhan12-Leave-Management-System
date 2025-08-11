@@ -1,5 +1,5 @@
 
-function togglePassword() {
+    function togglePassword() {
   const passwordInput = document.getElementById("password");
   const toggleIcon = document.querySelector(".password-toggle");
 
@@ -14,7 +14,6 @@ function togglePassword() {
   }
 }
 
-
 document.getElementById("loginForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -22,8 +21,10 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   const passwordInput = document.getElementById("password").value.trim();
   const messageDiv = document.getElementById("message");
 
+  
   const savedUser = JSON.parse(localStorage.getItem("employeeUser"));
 
+  
   if (
     savedUser &&
     (usernameInput === savedUser.username || usernameInput === savedUser.email) &&
@@ -32,6 +33,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     
     localStorage.setItem("isEmployeeLoggedIn", "true");
 
+    
     const loading = document.getElementById("loading");
     loading.innerHTML = `<div class="spinner-border text-light spinner-border-sm" role="status"></div>`;
 

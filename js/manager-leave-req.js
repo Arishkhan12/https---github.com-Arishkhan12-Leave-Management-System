@@ -1,35 +1,32 @@
 
-        
-        document.querySelectorAll('.view-details-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                alert('View details functionality');
-            });
-        });
-
-        
-        document.querySelectorAll('.approve-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const requestItem = this.closest('.request-item');
-                const statusBadge = requestItem.querySelector('.status-badge');
-                const actionButtons = requestItem.querySelector('.action-buttons');
+            
+            document.addEventListener('DOMContentLoaded', function() {
+            
+                const searchInput = document.querySelector('.filter-input');
+                const statusFilter = document.querySelector('.filter-select');
                 
-                statusBadge.textContent = 'Approved';
-                statusBadge.className = 'status-badge approved';
-                actionButtons.style.display = 'none';
-                requestItem.classList.add('approved');
-            });
-        });
-
-        document.querySelectorAll('.reject-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const requestItem = this.closest('.request-item');
-                const statusBadge = requestItem.querySelector('.status-badge');
-                const actionButtons = requestItem.querySelector('.action-buttons');
                 
-                statusBadge.textContent = 'Rejected';
-                statusBadge.className = 'status-badge rejected';
-                actionButtons.style.display = 'none';
-                requestItem.classList.add('rejected');
+                const approveButtons = document.querySelectorAll('.approve-btn');
+                const rejectButtons = document.querySelectorAll('.reject-btn');
+                
+                approveButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const requestItem = this.closest('.request-item');
+                        const statusBadge = requestItem.querySelector('.status-badge');
+                        statusBadge.className = 'status-badge approved';
+                        statusBadge.textContent = 'Approved';
+                        this.closest('.action-buttons').style.display = 'none';
+                    });
+                });
+                
+                rejectButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const requestItem = this.closest('.request-item');
+                        const statusBadge = requestItem.querySelector('.status-badge');
+                        statusBadge.className = 'status-badge rejected';
+                        statusBadge.textContent = 'Rejected';
+                        this.closest('.action-buttons').style.display = 'none';
+                    });
+                });
             });
-        });
-    
+        

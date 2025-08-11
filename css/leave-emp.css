@@ -1,0 +1,110 @@
+
+        .card-metric {
+          border-radius: 12px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+          padding: 1rem;
+          text-align: center;
+        }
+    
+        .filter-box {
+          border: 2px solid #007bff;
+          border-radius: 12px;
+          padding: 1rem;
+        }
+    
+        .leave-card {
+          border-radius: 12px;
+          background-color: #fff;
+          padding: 1.5rem;
+          box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+          margin-bottom: 1.5rem;
+        }
+    
+        .tag-box {
+          border-radius: 8px;
+          padding: 0.5rem 1rem;
+          font-weight: 600;
+        }
+    
+        .tag-approved {
+          background-color: #e6fff0;
+          color: #28a745;
+        }
+    
+        .tag-pending {
+          background-color: #fff3cd;
+          color: #856404;
+        }
+    
+        .bg-faint-purple {
+          background-color: #f3f0ff;
+        }
+    
+        .status-badge {
+          padding: 0.25rem 0.5rem;
+          border-radius: 4px;
+          font-size: 0.75rem;
+          font-weight: 600;
+        }
+    
+      .badge-approved {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      white-space: nowrap;
+      /* Remove any margins that might be pushing it away */
+      margin-right: 0;
+    }
+    
+        .badge-pending {
+          background-color: #fff3cd;
+          color: #856404;
+        }
+    .gradient-text {
+      background: linear-gradient(90deg, #6758F4 0%, #7428FC 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    
+      -webkit-text-fill-color: transparent;
+    }
+    .filter-box {
+        padding-top: 1.5rem;  
+        padding-bottom: 1.5rem; 
+    }
+        .checkbox-lg {
+          width: 1.2rem;
+          height: 1.2rem;
+        }
+        .leave-card {
+          border-radius: 12px;
+          background-color: #fff;
+          padding: 1.5rem;
+          box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+          margin-bottom: 1.5rem;
+        }
+        .info-box {
+          background-color: #f8f9fa;
+          border-radius: 8px;
+          padding: 1rem;
+          margin-bottom: 1rem;
+        }
+        .icon-container {
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 1rem;
+        }
+        .checkbox-lg {
+          width: 1.2rem;
+          height: 1.2rem;
+        }
+        .divider {
+          border-top: 1px solid #dee2e6;
+          margin: 1rem 0;
+        }
+      

@@ -17,113 +17,8 @@
   <title>Leave Request Form</title>
  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background: #f4f0ff;
-      font-family: 'Segoe UI', sans-serif;
-    }
-.top-bar {
-  background-color: white !important;
-  border-bottom: 1px solid #e5e5e5;
-  box-shadow: 0 2px 4px rgba(92, 55, 237, 0.1); /* Optional: soft purple shadow */
-}
- 
-.header-icon {
-  background: #E8DBFF;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
- 
-    .form-container {
-      background-color: white;
-      border-radius: 10px;
-      padding: 40px;
-      max-width: 800px;
-      margin: 50px auto;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
- 
-    .header {
-      display: flex;
-      align-items: center;
-      padding: 20px 40px 0;
-    }
- 
-    .header svg {
-      background: #5C37ED;
-      padding: 6px;
-      border-radius: 10px;
-      margin-right: 10px;
-    }
- 
-    .header-text {
-      font-weight: 600;
-      font-size: 16px;
-      color: #5C37ED;
-    }
- 
-    .form-title {
-      text-align: center;
-      color: #5C37ED;
-      font-size: 24px;
-      font-weight: 600;
-      margin-top: 20px;
-    }
- 
-    .form-subtitle {
-      text-align: center;
-      color: #7a7a7a;
-      font-size: 14px;
-      margin-bottom: 30px;
-    }
- 
-    label {
-      font-weight: 600;
-      font-size: 14px;
-    }
- 
-    .form-control {
-      height: 45px;
-      border-radius: 8px;
-    }
- 
-    textarea.form-control {
-      height: auto;
-      min-height: 100px;
-    }
- 
-    .btn-submit {
-      background: linear-gradient(90deg, #675CF3 0%, #3B358D 100%);
-      color: white;
-      font-weight: 600;
-      padding: 10px 30px;
-      border: none;
-      border-radius: 8px;
-    }
- 
-    .btn-cancel {
-      background: none;
-      border: none;
-      color: #6545F2;
-      font-weight: 600;
-      margin-left: 15px;
-     
-    }
-</style>
-  .input-group .form-control {
-    border-right: 0;
-  }
-  .input-group-text {
-    border-left: 0;
-    background-color: #fff;
-    border-color: #ced4da;
-  }
-</style>
- 
+  <link rel="stylesheet" href="../css/leave-req.css">
+    
 </head>
 <body>
     <div class="main-wrapper">
@@ -134,11 +29,9 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="1" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l4.147 4.146a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
         </svg>
-        <button class="btn btn-link px-0 me-2">
-    <i class="bi bi-arrow-left" style="font-size: 1.2rem ;" >
-        back
-    </i>
-  </button>
+       
+        <a href="Login-Dashboard.html" class="back-link">&larr; Back</a>
+
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="32" height="32" rx="5" fill="url(#paint0_linear_50_365)"/>
 <path d="M23.3127 8.16671H20.1877V6.60421C20.1877 6.46607 20.1328 6.3336 20.0351 6.23592C19.9374 6.13825 19.805 6.08337 19.6668 6.08337C19.5287 6.08337 19.3962 6.13825 19.2985 6.23592C19.2009 6.3336 19.146 6.46607 19.146 6.60421V8.16671H11.8543V6.60421C11.8543 6.46607 11.7995 6.3336 11.7018 6.23592C11.6041 6.13825 11.4716 6.08337 11.3335 6.08337C11.1954 6.08337 11.0629 6.13825 10.9652 6.23592C10.8675 6.3336 10.8127 6.46607 10.8127 6.60421V8.16671H7.68766C6.99725 8.16753 6.33535 8.44217 5.84715 8.93036C5.35896 9.41856 5.08432 10.0805 5.0835 10.7709V24.3125C5.08432 25.003 5.35896 25.6649 5.84715 26.153C6.33535 26.6412 6.99725 26.9159 7.68766 26.9167H23.3127C24.0033 26.9167 24.6657 26.6423 25.1541 26.154C25.6425 25.6656 25.9168 25.0032 25.9168 24.3125V10.7709C25.9168 10.0802 25.6425 9.41783 25.1541 8.92945C24.6657 8.44107 24.0033 8.16671 23.3127 8.16671ZM24.8752 24.3125C24.8752 24.7269 24.7105 25.1244 24.4175 25.4174C24.1245 25.7104 23.7271 25.875 23.3127 25.875H7.68766C7.27326 25.875 6.87583 25.7104 6.58281 25.4174C6.28978 25.1244 6.12516 24.7269 6.12516 24.3125V15.4584H24.8752V24.3125ZM24.8752 14.4167H6.12516V10.7709C6.12516 9.90837 6.82308 9.20837 7.68766 9.20837H10.8127V10.7709C10.8127 10.909 10.8675 11.0415 10.9652 11.1392C11.0629 11.2368 11.1954 11.2917 11.3335 11.2917C11.4716 11.2917 11.6041 11.2368 11.7018 11.1392C11.7995 11.0415 11.8543 10.909 11.8543 10.7709V9.20837H19.146V10.7709C19.146 10.909 19.2009 11.0415 19.2985 11.1392C19.3962 11.2368 19.5287 11.2917 19.6668 11.2917C19.805 11.2917 19.9374 11.2368 20.0351 11.1392C20.1328 11.0415 20.1877 10.909 20.1877 10.7709V9.20837H23.3127C23.7271 9.20837 24.1245 9.37299 24.4175 9.66602C24.7105 9.95904 24.8752 10.3565 24.8752 10.7709V14.4167Z" fill="white"/>
