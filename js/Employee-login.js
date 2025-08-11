@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 function togglePassword() {
   const passwordInput = document.getElementById("password");
   const toggleIcon = document.querySelector(".password-toggle");
@@ -43,4 +42,4 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     messageDiv.innerHTML = `<div class="alert alert-danger mt-3">❌ Invalid username or password</div>`;
   }
 });
->>>>>>> 982c8b73a12ce035938843a93e2cd1d1073b4eb3
+
