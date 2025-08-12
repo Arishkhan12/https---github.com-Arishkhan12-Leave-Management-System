@@ -36,6 +36,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     
     const loading = document.getElementById("loading");
     loading.innerHTML = `<div class="spinner-border text-light spinner-border-sm" role="status"></div>`;
+    messageDiv.innerHTML = `<div class="alert alert-success mt-3">✅ Login successful! Redirecting...</div>`;
 
     setTimeout(() => {
       window.location.href = "login-dashboard.html";

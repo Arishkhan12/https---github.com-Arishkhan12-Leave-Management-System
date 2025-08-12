@@ -1,79 +1,53 @@
- 
-        document.querySelectorAll('.nav-item').forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
 
-        
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const sidebar = document.querySelector('.sidebar');
+document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
 
-        mobileMenuBtn?.addEventListener('click', () => {
-            sidebar.style.transform = sidebar.style.transform === 'translateX(0px)' ? 'translateX(-100%)' : 'translateX(0px)';
-        });
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const sidebar = document.querySelector('.sidebar');
 
-        
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Leave request submitted successfully!');
-        });
-
-        document.querySelectorAll('.quick-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const action = this.textContent.trim();
-                alert(`${action} clicked!`);
-            });
-        });
-
-        function logout() {
-            localStorage.removeItem("isEmployeeLoggedIn");
-            window.location.href = "Employee-login.html";
-}
-
-let leaveRequests = JSON.parse(localStorage.getItem("leaveRequests")) || [];
-
-// Render requests on load
-function renderRequests() {
-  const container = document.querySelector(".card-content .request-item")?.parentNode;
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  leaveRequests.slice().reverse().forEach(req => {
-    container.innerHTML += `
-      <div class="request-item">
-        <div class="request-info">
-          <h4>${req.type}</h4>
-          <p>${req.start} - ${req.end}</p>
-        </div>
-        <span class="status-badge status-pending">Pending</span>
-      </div>
-    `;
-  });
-
-
-  const badge = document.querySelector(".badge");
-  if (badge) badge.textContent = leaveRequests.length;
-}
-
-document.querySelector("form")?.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const type = this.querySelector("select").value;
-  const start = this.querySelector('input[type="date"]:first-of-type').value;
-  const end = this.querySelector('input[type="date"]:last-of-type').value;
-  const reason = this.querySelector("textarea").value;
-
-  const newRequest = { type, start, end, reason, status: "pending" };
-  leaveRequests.push(newRequest);
-  localStorage.setItem("leaveRequests", JSON.stringify(leaveRequests));
-
-  this.reset(); 
-  renderRequests();
+mobileMenuBtn?.addEventListener('click', () => {
+    sidebar.style.transform = sidebar.style.transform === 'translateX(0px)' ? 'translateX(-100%)' : 'translateX(0px)';
 });
 
 
+function logout() {
+    localStorage.removeItem("isEmployeeLoggedIn");
+    window.location.href = "Emp-portal.html";
+}
+
+// ======== LOGIN FUNCTION ========
+document.getElementById("loginForm")?.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const usernameInput = document.getElementById("username").value.trim();
+    const passwordInput = document.getElementById("password").value.trim();
+    const messageDiv = document.getElementById("message");
+
+    const savedUser = JSON.parse(localStorage.getItem("employeeUser"));
+
+    if (
+        savedUser &&
+        (usernameInput === savedUser.username || usernameInput === savedUser.email) &&
+        passwordInput === savedUser.password
+    ) {
+        localStorage.setItem("isEmployeeLoggedIn", "true");
+
     
+        const loading = document.getElementById("loading");
+        if (loading) {
+            loading.innerHTML = `<div class="spinner-border text-light spinner-border-sm" role="status"></div>`;
+        }
+
+    
+        setTimeout(() => {
+            window.location.href = "login-dashboard.html";
+        }, 800);
+    } else {
+        messageDiv.innerHTML = `<div class="alert alert-danger mt-3">❌ Invalid username or password</div>`;
+    }
+});
