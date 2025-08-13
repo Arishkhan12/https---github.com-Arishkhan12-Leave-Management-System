@@ -1,5 +1,4 @@
-
-        body {
+ body {
             background-color: #f8f9fa;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
@@ -20,17 +19,6 @@
         }
         .nav-link:hover {
             color: #3498db;
-        }
-        .user-profile {
-            display: flex;
-            align-items: center;
-        }
-        .user-img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-            object-fit: cover;
         }
         .success-container {
             max-width: 600px;
@@ -74,78 +62,26 @@
             border-top: 1px dashed #dee2e6;
             margin: 20px 0;
         }
- 
- 
- 
- 
-        header {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-            display: flex;
-            justify-content: center;
+        .badge-container {
+            position: relative;
+            display: inline-flex;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-       
-        .success-container {
-            text-align: center;
-            max-width: 500px;
-            padding: 30px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-       
-        .success-title {
-            color: #16A34A;
-            font-size: 24px;
-            font-weight: 600;
+            justify-content: center;
             margin-bottom: 20px;
         }
-        .actions {
-            padding: 20px 25px;
-            display: flex;
-            justify-content: space-between;
-            gap: 15px;
+        .badge-container img {
+            height: 40px;
+            width: auto;
+            display: block;
         }
-
-        .btn {
-            padding: 10px 20px;
-            border-radius: 5px;
+        .badge-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #8B4513; 
+            font-weight: bold;
             font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            border: none;
-            text-decoration: none;
-            text-align: center;
-            transition: all 0.3s ease;
-            display: inline-block;
+            white-space: nowrap;
         }
-
-        .btn-primary {
-            background: #2c3e50;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #34495e;
-        }
-
-        .btn-secondary {
-            background: #ecf0f1;
-            color: #7f8c8d;
-            border: 1px solid #bdc3c7;
-        }
-
-        .btn-secondary:hover {
-            background: #d5dbdb;
-        }
-
-        .btn::before {
-            margin-right: 8px;
-        }
-
-        .btn-primary::before {
-            content: '←';
-        }
+        
